@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <head>
 
@@ -62,6 +64,7 @@
 				<li><a class="page-scroll" href="#about">About</a></li>
 				<li><a class="page-scroll" href="#download">Download</a></li>
 				<li><a class="page-scroll" href="#contact">Contact</a></li>
+				<li>Zalogowany jako: <sec:authentication property="principal.username"/></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
@@ -134,7 +137,8 @@
 				templates, give us suggestions for new templates and themes, or to
 				just say hello!</p>
 			<p>feedback@RadcaJakup.com</p>
-			<a href="/welcome"><img id="judge" alt="Porada prawna" src="resources/images/judge.png" width="126" height="126"></a>
+			<a href="/welcome"><img id="judge" alt="Porada prawna"
+				src="resources/images/judge.png" width="126" height="126"></a>
 			<p>
 				<a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
 			</p>

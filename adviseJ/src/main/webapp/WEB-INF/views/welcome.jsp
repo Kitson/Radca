@@ -64,7 +64,9 @@
 				<li><a class="page-scroll" href="#about">About</a></li>
 				<li><a class="page-scroll" href="#download">Download</a></li>
 				<li><a class="page-scroll" href="#contact">Contact</a></li>
-				<li>Zalogowany jako: <sec:authentication property="principal.username"/></li>
+				<li><sec:authorize access="hasRole('ROLE_USER')">Zalogowany jako:
+						<sec:authentication property="principal.username" />
+					</sec:authorize></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->

@@ -24,4 +24,16 @@
 			</security:user-service>
 		</security:authentication-provider>
 	</security:authentication-manager>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize">
+			<value> 1000000 </value>
+		</property>
+		<property name="maxInMemorySize">
+			<value> 1000000 </value>
+		</property>
+	</bean>
+	<bean id="webexpressionHandler"
+		class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
 </beans>

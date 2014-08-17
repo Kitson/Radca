@@ -1,4 +1,4 @@
-package com.app.adviseJ.Auth;
+package com.app.adviseJ.auth;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.Ordered;

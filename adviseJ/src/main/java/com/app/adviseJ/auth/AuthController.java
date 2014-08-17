@@ -1,4 +1,4 @@
-package com.app.adviseJ.Auth;
+package com.app.adviseJ.auth;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

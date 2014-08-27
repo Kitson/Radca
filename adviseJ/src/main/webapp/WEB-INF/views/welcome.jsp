@@ -114,13 +114,8 @@
 					GitHub if you prefer. Additionally, Grayscale is the first Start
 					Bootstrap theme to come with a LESS file for easy color
 					customization!</p>
-				<a href="http://startbootstrap.com/grayscale"
+				<a href="advise"
 					class="btn btn-default btn-lg">Otrzymaj wycene</a>
-				<form th:action="@{/signin/facebook}" method="POST">
-					<button type="submit">Sign in with Facebook</button>
-					<input type="hidden" name="scope"
-						value="email,publish_stream,offline_access" />
-				</form>
 			</div>
 		</div>
 	</div>

@@ -24,6 +24,6 @@ public class WelcomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "welcome";
+		return "home";
 	}
 }

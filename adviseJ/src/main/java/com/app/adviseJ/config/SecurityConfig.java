@@ -1,4 +1,4 @@
-package com.app.adviseJ.auth;
+package com.app.adviseJ.config;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

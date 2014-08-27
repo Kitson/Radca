@@ -3,6 +3,7 @@
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 
 <meta charset="utf-8">
@@ -115,15 +116,10 @@
 					customization!</p>
 				<a href="http://startbootstrap.com/grayscale"
 					class="btn btn-default btn-lg">Otrzymaj wycene</a>
-				<form action="/connect/facebook" method="POST">
-					<input type="hidden" name="scope" value="read_stream" />
-					<div class="formInfo">
-						<p>You aren't connected to Facebook yet. Click the button to
-							connect this application with your Facebook account.</p>
-					</div>
-					<p>
-						<button type="submit">Connect to Facebook</button>
-					</p>
+				<form th:action="@{/signin/facebook}" method="POST">
+					<button type="submit">Sign in with Facebook</button>
+					<input type="hidden" name="scope"
+						value="email,publish_stream,offline_access" />
 				</form>
 			</div>
 		</div>
@@ -167,6 +163,10 @@
 	<footer>
 	<div class="container text-center">
 		<p>Copyright &copy; Your Website 2014</p>
+		<div class="fb-like"
+			data-href="https://developers.facebook.com/docs/plugins/"
+			data-layout="button_count" data-action="like" data-show-faces="true"
+			data-share="true"></div>
 	</div>
 	</footer>
 
@@ -185,6 +185,18 @@
 
 	<!-- Custom Theme JavaScript -->
 	<script src="resources/js/grayscale.js"></script>
+	<div id="fb-root"></div>
+	<script>
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id))
+				return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&appId=521061941341492&version=v2.0";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
 
 </body>
 

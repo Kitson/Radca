@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  
 @EnableWebMvc
 @Configuration
-@ComponentScan({ "com.app.adviseJ.*" })
+@ComponentScan({ "com.app.*" })
 @EnableTransactionManagement
 @Import({ SecurityConfig.class })
 public class AppConfig {

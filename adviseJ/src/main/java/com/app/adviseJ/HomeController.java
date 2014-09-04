@@ -1,12 +1,9 @@
 package com.app.adviseJ;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.Locale;
 
 import javax.inject.Inject;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.PagedList;
 import org.springframework.social.facebook.api.Post;
@@ -40,27 +37,43 @@ public class HomeController {
 		return "welcome";
 	}
 
-	@RequestMapping(value = "authorized/home", method = RequestMethod.GET)
+	@RequestMapping(value = "main/home", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 
-		return "authorized/index";
+		return "main/index";
 	}
 
-	@RequestMapping(value = "authorized/about", method = RequestMethod.GET)
+	@RequestMapping(value = "main/about", method = RequestMethod.GET)
 	public String about(Locale locale, Model model) {
 
-		return "authorized/about";
+		return "main/about";
 	}
 
-	@RequestMapping(value = "authorized/contact", method = RequestMethod.GET)
+	@RequestMapping(value = "main/contact", method = RequestMethod.GET)
 	public String contact(Locale locale, Model model) {
 
-		return "authorized/contact";
+		return "main/contact";
 	}
 
-	@RequestMapping(value = "authorized/signin", method = RequestMethod.GET)
+	@RequestMapping(value = "main/signin", method = RequestMethod.GET)
 	public String signin(Locale locale, Model model) {
 
-		return "authorized/signin";
+		return "main/signin";
+	}
+	
+	@RequestMapping(value = "main/signup", method = RequestMethod.GET)
+	public String signup(Locale locale, Model model) {
+
+		return "main/signup";
+	}
+	@RequestMapping(value = "main/sidebar-left", method = RequestMethod.GET)
+	public String sidebarleft(Locale locale, Model model) {
+
+		return "main/sidebar-left";
+	}
+	@RequestMapping(value = "main/sidebar-right", method = RequestMethod.GET)
+	public String sidebarright(Locale locale, Model model) {
+
+		return "main/sidebar-right";
 	}
 }

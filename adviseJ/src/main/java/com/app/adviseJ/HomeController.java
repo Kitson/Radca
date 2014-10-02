@@ -26,14 +26,7 @@ public class HomeController {
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String helloFacebook(Model model) {
-		if (!facebook.isAuthorized()) {
-			return "redirect:/connect/facebook";
-		} else {
-			model.addAttribute(facebook.userOperations().getUserProfile());
-			PagedList<Post> homeFeed = facebook.feedOperations().getHomeFeed();
-			model.addAttribute("feed", homeFeed);
-		}
+	public String welcome(Model model) {
 		return "welcome";
 	}
 

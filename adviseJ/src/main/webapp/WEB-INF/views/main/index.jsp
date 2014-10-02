@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
 	
-	<title>Progressus - Free business bootstrap template by GetTemplate</title>
+	<title>iRadca - darmowe porady prawne</title>
 
 	<link rel="shortcut icon" href="../resources/images/gt_favicon.png">
 	
@@ -51,6 +52,7 @@
 					<li><a class="btn" href="signin">SIGN IN / SIGN UP</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
+			<sec:authorize access="isAuthenticated()"><h1>Witaj, <sec:authentication property="principal.username" /></h1></sec:authorize>
 		</div>
 	</div> 
 	<!-- /.navbar -->

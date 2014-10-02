@@ -34,12 +34,12 @@
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-				<a class="navbar-brand" href="main/index"><img src="resources/images/logo.png" alt="Progressus HTML5 template"></a>
+				<a class="navbar-brand" href="home"><img src="../resources/images/logo.png" alt="Progressus HTML5 template"></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a href="main/index">Home</a></li>
-					<li><a href="main/about">About</a></li>
+					<li><a href="home">Home</a></li>
+					<li><a href="about">About</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -61,7 +61,7 @@
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li><a href="index">Home</a></li>
+			<li><a href="home">Home</a></li>
 			<li class="active">About</li>
 		</ol>
 
@@ -74,7 +74,7 @@
 				</header>
 				
 				<p>
-					We’d love to hear from you. Interested in working together? Fill out the form below with some info about your project and I will get back to you as soon as I can. Please allow a couple days for me to respond.
+					W czym możemy pomóc?. Jeżeli jesteś zainteresowany otrzymaniem wyceny porady prawnej prosimy o kontakt telefoniczny lub pocztą elektroniczną:
 				</p>
 				<br>
 					<form>
@@ -115,11 +115,11 @@
 				<div class="widget">
 					<h4>Address</h4>
 					<address>
-						2002 Holcombe Boulevard, Houston, TX 77030, USA
+						Jana Pawla II, Gliwice, 44-100
 					</address>
 					<h4>Phone:</h4>
 					<address>
-						(713) 791-1414
+						605 052 247
 					</address>
 				</div>
 
@@ -142,10 +142,10 @@
 					<div class="col-md-3 widget">
 						<h3 class="widget-title">Contact</h3>
 						<div class="widget-body">
-							<p>+234 23 9873237<br>
-								<a href="mailto:#">some.email@somewhere.com</a><br>
+							<p>+48 605052247<br>
+								<a href="mailto:#">paykitson@gmail.com</a><br>
 								<br>
-								234 Hidden Pond Road, Ashland City, TN 37015
+								Jana Pawla II, Gliwice, 44-100
 							</p>	
 						</div>
 					</div>
@@ -193,7 +193,7 @@
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="text-right">
-								Copyright &copy; 2014, Your name. Designed by <a href="http://gettemplate.com/" rel="designer">gettemplate</a> 
+								Copyright &copy; 2014, iRadca. Designed by Jonasz Kitowski</a> 
 							</p>
 						</div>
 					</div>

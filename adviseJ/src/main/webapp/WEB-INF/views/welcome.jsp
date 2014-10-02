@@ -51,8 +51,7 @@
 				<i class="fa fa-bars"></i>
 			</button>
 			<a class="navbar-brand page-scroll" href="#page-top"> <i
-				class="fa fa-play-circle"></i> <span class="light">Radca</span>
-				Jakup
+				class="fa fa-play-circle"></i> <span class="light">iRadca</span>
 			</a>
 		</div>
 
@@ -62,9 +61,9 @@
 			<ul class="nav navbar-nav">
 				<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
 				<li class="hidden"><a href="#page-top"></a></li>
-				<li><a class="page-scroll" href="#about">About</a></li>
-				<li><a class="page-scroll" href="#download">Download</a></li>
-				<li><a class="page-scroll" href="#contact">Contact</a></li>
+				<li><a class="page-scroll" href="#about">O nas</a></li>
+				<li><a class="page-scroll" href="#download">Porady Prawne</a></li>
+				<li><a class="page-scroll" href="#contact">Wejście</a></li>
 				<li><sec:authorize access="hasRole('ROLE_USER')">Zalogowany jako:
 						<sec:authentication property="principal.username" />
 					</sec:authorize></li>
@@ -80,7 +79,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<h1 class="brand-heading">Radca Jakup</h1>
+					<h1 class="brand-heading">iRadca</h1>
 					<p class="intro-text">Porady prawne.</p>
 					<a href="#about" class="btn btn-circle page-scroll"> <i
 						class="fa fa-angle-double-down animated"></i>
@@ -130,7 +129,7 @@
 				templates, give us suggestions for new templates and themes, or to
 				just say hello!</p>
 			<p>feedback@RadcaJakup.com</p>
-			<a href="/welcome"><img id="judge" alt="Porada prawna"
+			<a href="main/home"><img id="judge" alt="Porada prawna"
 				src="resources/images/judge.png" width="126" height="126"></a>
 			<p>
 				<a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>

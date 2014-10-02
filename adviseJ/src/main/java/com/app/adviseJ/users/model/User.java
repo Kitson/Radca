@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
  
 @Entity
-@Table(name = "users", catalog = "spring")
+@Table(name = "users", catalog = "radca_spring")
 public class User {
  
 	private String username;

@@ -24,7 +24,7 @@ public class MyUserDetailsService implements UserDetailsService {
 	@Autowired
 	private UserDao userDao;
  
-	@Transactional(readOnly=true)
+	@Transactional(readOnly=false)
 	@Override
 	public UserDetails loadUserByUsername(final String username) 
 		throws UsernameNotFoundException {
@@ -37,8 +37,6 @@ public class MyUserDetailsService implements UserDetailsService {
  
 	}
  
-	// Converts com.mkyong.users.model.User user to
-	// org.springframework.security.core.userdetails.User
 	private User buildUserForAuthentication(com.app.adviseJ.users.model.User user, 
 		List<GrantedAuthority> authorities) {
 		return new User(user.getUsername(), user.getPassword(), 

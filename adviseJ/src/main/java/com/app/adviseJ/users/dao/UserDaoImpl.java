@@ -2,35 +2,50 @@ package com.app.adviseJ.users.dao;
 
 import java.util.ArrayList;
 import java.util.List;
- 
+
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
- 
+
 import com.app.adviseJ.users.model.User;
- 
+
 @Repository
 public class UserDaoImpl implements UserDao {
- 
+
 	@Autowired
-	private SessionFactory sessionFactory;
- 
+	private org.hibernate.SessionFactory sessionFactory;
+	
 	@SuppressWarnings("unchecked")
 	public User findByUserName(String username) {
- 
+
 		List<User> users = new ArrayList<User>();
- 
+
 		users = sessionFactory.getCurrentSession()
-			.createQuery("from User where username=?")
-			.setParameter(0, username)
-			.list();
- 
+				.createQuery("from User where username=?")
+				.setParameter(0, username).list();
+
+		
 		if (users.size() > 0) {
 			return users.get(0);
 		} else {
 			return null;
 		}
- 
+
+	} 
+	public void insertUser(User user) {
+		Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        /*session.createQuery("insert into User(username,password,enabled) values(:username,:password,:enabled)").setParameter("username",user.getUsername())
+		.setParameter("password",user.getPassword()).setParameter("enabled",1).executeUpdate();*/
+        session.save(user);
+        session.getTransaction().commit();
+        session.close();
+		/*sessionFactory.getCurrentSession()
+		.createSQLQuery("insert into users values(?,?,?)").addEntity(User.class).setParameter(0,user.getUsername())
+		.setParameter(1,user.getPassword()).setParameter(2,user.isEnabled());*/
 	}
- 
+
 }

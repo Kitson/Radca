@@ -33,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.loginPage("/signin").failureUrl("/main/signin?error").defaultSuccessUrl("/main/home")
 		.usernameParameter("username")
 		.passwordParameter("password")
-		.and().logout().logoutSuccessUrl("/login?logout")
+		.and().logout().logoutSuccessUrl("/main/login?logout")
 		.and().csrf()
 		.and().exceptionHandling().accessDeniedPage("/403");
 	}

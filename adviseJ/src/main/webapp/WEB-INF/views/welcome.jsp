@@ -64,9 +64,6 @@
 				<li><a class="page-scroll" href="#about">O nas</a></li>
 				<li><a class="page-scroll" href="#download">Porady Prawne</a></li>
 				<li><a class="page-scroll" href="#contact">Wejście</a></li>
-				<li><sec:authorize access="hasRole('ROLE_USER')">Zalogowany jako:
-						<sec:authentication property="principal.username" />
-					</sec:authorize></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->

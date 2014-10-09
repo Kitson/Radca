@@ -2,19 +2,23 @@ package com.app.adviseJ.users.model;
 
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
- 
+
+import org.hibernate.validator.constraints.*;
+import org.hibernate.validator.*;
 @Entity
 @Table(name = "users", catalog = "radca_spring")
 public class User {
- 
-	private String username;
-	private String password;
+
+	@NotEmpty @Length (min = 5, max = 20) private String username;
+	@NotEmpty @Length (min = 5, max = 100) private String password;
+	@Email private String email;
 	private boolean enabled;
 	private Set<UserRole> userRole = new HashSet<UserRole>(0);
  
@@ -41,7 +45,6 @@ public class User {
 	public String getUsername() {
 		return this.username;
 	}
- 
 	public void setUsername(String username) {
 		this.username = username;
 	}

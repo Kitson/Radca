@@ -30,9 +30,6 @@ public class WelcomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		User user = new User("Jonasz","9dqnge23",true);
-		sessionFactory.getCurrentSession().createQuery("INSERT INTO User (username, password, enabled) VALUES ("+user.getUsername()+","+user.getPassword()+","+user.isEnabled()+");");
-		
 		return "home";
 	}
 }

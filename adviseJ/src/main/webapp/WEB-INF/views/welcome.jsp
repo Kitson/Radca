@@ -105,13 +105,10 @@
 		<div class="container">
 			<div class="col-lg-8 col-lg-offset-2">
 				<h2>Otrzymaj Wycene</h2>
-				<p>You can download Grayscale for free on the download page at
-					Start Bootstrap. You can also get the source code directly from
-					GitHub if you prefer. Additionally, Grayscale is the first Start
-					Bootstrap theme to come with a LESS file for easy color
-					customization!</p>
-				<a href="advise"
-					class="btn btn-default btn-lg">Otrzymaj wycene</a>
+				<p>Wycena porad prawnych wszystkich typów. Koszt wykonania operatu szacunkowego
+					ustalany jest indywidualnie i zależy od: rodzaju usługi oraz
+					celu wyceny. Termin wykonania usługi – ok 5 dni roboczych</p>
+				<a href="advise" class="btn btn-default btn-lg">Otrzymaj wycene</a>
 			</div>
 		</div>
 	</div>
@@ -122,14 +119,12 @@
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
 			<h2>Contact with Radca Jakup</h2>
-			<p>Feel free to email us to provide some feedback on our
-				templates, give us suggestions for new templates and themes, or to
-				just say hello!</p>
+			<p>Jesli chcesz wiedzieć więcej o którymś z naszych produktów, proszę napisz na podany adres email lub skorzystaj z formularza.</p>
 			<p>feedback@RadcaJakup.com</p>
 			<a href="main/home"><img id="judge" alt="Porada prawna"
 				src="resources/images/judge.png" width="126" height="126"></a>
 			<p>
-				<a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
+				<a href="mailto:paykitson@gmail.com">paykitson@gmail.com</a>
 			</p>
 			<ul class="list-inline banner-social-buttons">
 				<li><a href="https://twitter.com/SBootstrap"
@@ -147,10 +142,6 @@
 	</div>
 	</section>
 
-	<!-- Map Section -->
-	<div id="map"></div>
-
-	<!-- Footer -->
 	<footer>
 	<div class="container text-center">
 		<p>Copyright &copy; Your Website 2014</p>
@@ -184,7 +175,7 @@
 				return;
 			js = d.createElement(s);
 			js.id = id;
-			js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&appId=521061941341492&version=v2.0";
+			js.src = "//wp.pl";
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 	</script>

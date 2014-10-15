@@ -43,7 +43,7 @@ public class SignupController {
 		String name = firstname +" "+ lastname;
 		List <String> errors = new ArrayList<String>();
 		String hashpw = BCrypt.hashpw(password,BCrypt.gensalt());
-		user = new User(name,hashpw,true);
+		user = new User(name,hashpw,true,email);
 		ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
 		Validator validator = validatorFactory.getValidator();
 		Set<ConstraintViolation<User>> validationErrors = validator.validate(user);

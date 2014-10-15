@@ -25,20 +25,32 @@ public class User {
 	public User() {
 	}
  
-	public User(String username, String password, boolean enabled) {
+	public User(String username, String password, boolean enabled,String email) {
 		this.username = username;
 		this.password = password;
 		this.enabled = enabled;
+		this.email = email;
 	}
  
 	public User(String username, String password, 
-		boolean enabled, Set<UserRole> userRole) {
+		boolean enabled,String email, Set<UserRole> userRole) {
 		this.username = username;
 		this.password = password;
 		this.enabled = enabled;
+		this.email = email;
 		this.userRole = userRole;
 	}
- 
+
+	@Column(name = "email", unique = true, 
+		nullable = false, length = 45)
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	@Id
 	@Column(name = "username", unique = true, 
 		nullable = false, length = 45)

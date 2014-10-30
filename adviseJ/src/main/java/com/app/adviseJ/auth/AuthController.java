@@ -9,20 +9,20 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class AuthController {
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/main/signin", method = RequestMethod.GET)
 	public ModelAndView login(
 		@RequestParam(value = "error", required = false) String error,
 		@RequestParam(value = "logout", required = false) String logout) {
  
 		ModelAndView model = new ModelAndView();
 		if (error != null) {
-			model.addObject("error", "Invalid username and password!");
+			model.addObject("error", "Podano niepoprawne dane do logowania.");
 		}
  
 		if (logout != null) {
-			model.addObject("msg", "You've been logged out successfully.");
+			model.addObject("msg", "Zostałeś poprawnie wylogowany.");
 		}
-		model.setViewName("login");
+		model.setViewName("/main/signin");
  
 		return model;
  

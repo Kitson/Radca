@@ -10,7 +10,6 @@
 <meta name="author" content="Sergey Pozhilov (GetTemplate.com)">
 
 <title>Sign in - Progressus Bootstrap template</title>
-
 <link rel="shortcut icon" href="assets/images/gt_favicon.png">
 
 <link rel="stylesheet" media="screen"
@@ -83,6 +82,12 @@
 			</header>
 
 			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+				<c:if test="${not empty error}">
+							<div class="error">${error}</div>
+						</c:if>
+						<c:if test="${not empty msg}">
+							<div class="msg">${msg}</div>
+						</c:if>
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<h3 class="thin text-center">Sign in to your account</h3>
@@ -91,12 +96,6 @@
 							adipisicing elit. Quo nulla quibusdam cum doloremque incidunt
 							nemo sunt a tenetur omnis odio.
 						</p>
-						<c:if test="${not empty error}">
-							<div class="error">${error}</div>
-						</c:if>
-						<c:if test="${not empty msg}">
-							<div class="msg">${msg}</div>
-						</c:if>
 						<hr>
 
 						<form name='loginForm' role="form"

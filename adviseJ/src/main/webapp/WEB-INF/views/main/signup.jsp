@@ -71,7 +71,7 @@
 
 		<ol class="breadcrumb">
 			<li><a href="home">Home</a></li>
-			<li class="active">Registration</li>
+			<li class="active">Rejestracja</li>
 		</ol>
 
 		<div class="row">
@@ -79,42 +79,48 @@
 			<!-- Article main content -->
 			<article class="col-xs-12 maincontent"> <header
 				class="page-header">
-			<h1 class="page-title">Registration</h1>
-			</header> <c:forEach items="${errors}" var="error">
-					><c:out value="${error}" /></br>
-			</c:forEach>
+			<h1 class="page-title">Rejestracja</h1>
+			</header>
 			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+				<c:if test="${not empty errors}">
+					<div class="error-log">
+						<c:forEach items="${errors}" var="error">
+							<c:out value="${error}" />
+							</br>
+						</c:forEach>
+					</div>
+				</c:if>
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<h3 class="thin text-center">Register a new account</h3>
+						<h3 class="thin text-center">Zarejestruj nowe konto</h3>
 						<p class="text-center text-muted">
-							Lorem ipsum dolor sit amet, <a href="signin">Login</a>
-							adipisicing elit. Quo nulla quibusdam cum doloremque incidunt
-							nemo sunt a tenetur omnis odio.
+							Jeśli posiadasz juz konto w naszym serwisie przejdź do, <a
+								href="signin">Logowanie</a> W innym wypadku poprawnie wypełnij
+							poniższ pola.
 						</p>
 						<hr>
 
 						<form action="signup" method="POST">
 							<div class="top-margin">
-								<label>First Name</label> <input type="text" name="firstName"
+								<label>Imie</label> <input type="text" name="firstName"
 									class="form-control">
 							</div>
 							<div class="top-margin">
-								<label>Last Name</label> <input type="text" name="lastName"
+								<label>Nazwisko</label> <input type="text" name="lastName"
 									class="form-control">
 							</div>
 							<div class="top-margin">
-								<label>Email Address <span class="text-danger">*</span></label>
-								<input type="text" name="email" class="form-control">
+								<label>Adres Email <span class="text-danger">*</span></label> <input
+									type="text" name="email" class="form-control">
 							</div>
 
 							<div class="row top-margin">
 								<div class="col-sm-6">
-									<label>Password <span class="text-danger">*</span></label> <input
+									<label>Hasło <span class="text-danger">*</span></label> <input
 										type="password" name="password" class="form-control">
 								</div>
 								<div class="col-sm-6">
-									<label>Confirm Password <span class="text-danger">*</span></label>
+									<label>Powtórz Hasło <span class="text-danger">*</span></label>
 									<input type="password" name="confirmPassword"
 										class="form-control">
 								</div>
@@ -125,11 +131,11 @@
 							<div class="row">
 								<div class="col-lg-8">
 									<label class="checkbox"> <input type="checkbox">
-										I've read the <a href="page_terms">Terms and Conditions</a>
+										Zapoznałem się z <a href="page_terms">Regulaminem</a>
 									</label>
 								</div>
 								<div class="col-lg-4 text-right">
-									<button class="btn btn-action" type="submit">Register</button>
+									<button class="btn btn-action" type="submit">Rejestruj</button>
 								</div>
 							</div>
 						</form>

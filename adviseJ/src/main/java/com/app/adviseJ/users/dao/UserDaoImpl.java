@@ -38,14 +38,9 @@ public class UserDaoImpl implements UserDao {
 	public void insertUser(User user) {
 		Session session = sessionFactory.openSession();
         session.beginTransaction();
-        /*session.createQuery("insert into User(username,password,enabled) values(:username,:password,:enabled)").setParameter("username",user.getUsername())
-		.setParameter("password",user.getPassword()).setParameter("enabled",1).executeUpdate();*/
         session.save(user);
         session.getTransaction().commit();
         session.close();
-		/*sessionFactory.getCurrentSession()
-		.createSQLQuery("insert into users values(?,?,?)").addEntity(User.class).setParameter(0,user.getUsername())
-		.setParameter(1,user.getPassword()).setParameter(2,user.isEnabled());*/
 	}
 
 }

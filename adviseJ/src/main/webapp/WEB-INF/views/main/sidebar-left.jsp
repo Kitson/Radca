@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html lang="pl">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
 	
-	<title>Left Sidebar template - Progressus Bootstrap template</title>
+	<title>Left Sidebar template - Darmowe Porady Prawne</title>
 
 	<link rel="shortcut icon" href="../resources/images/gt_favicon.png">
 	
@@ -48,7 +48,7 @@
 						</ul>
 					</li>
 					<li><a href="contact.html">Contact</a></li>
-					<li><a class="btn" href="signin.html">SIGN IN / SIGN UP</a></li>
+					<li><a class="btn" href="signin.html">Rejestracja / Logowanie</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>

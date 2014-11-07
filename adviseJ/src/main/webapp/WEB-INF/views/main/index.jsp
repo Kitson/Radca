@@ -1,16 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html lang="pl">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
 	
-	<title>iRadca - darmowe porady prawne</title>
+	<title>iRadca - Darmowe Porady Prawne</title>
 
 	<link rel="shortcut icon" href="../resources/images/gt_favicon.png">
 	
@@ -36,12 +36,12 @@
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-				<a class="navbar-brand" href="index.html"><img src="../resources/images/logo.png" alt="Progressus HTML5 template"></a>
+				<a class="navbar-brand" href="home"><img src="../resources/images/logo.png" alt="Progressus HTML5 template"></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="about">About</a></li>
+					<li class="active"><a href="#">Strona Główna</a></li>
+					<li><a href="about">O nas</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -49,11 +49,11 @@
 							<li class="active"><a href="sidebar-right">Right Sidebar</a></li>
 						</ul>
 					</li>
-					<li><a href="contact">Contact</a></li>
-					<li><a class="btn" href="signin">SIGN IN / SIGN UP</a></li>
+					<li><a href="contact">Kontakt</a></li>
+					<sec:authorize access="!isAuthenticated()"><li><a class="btn" href="signin">Rejestracja / Logowanie</a></li></sec:authorize>
+					<li><sec:authorize access="isAuthenticated()">Witaj, <sec:authentication property="principal.username" /><a class="btn" href="<c:url value="/j_spring_security_logout" />" >Wyloguj</a></sec:authorize></li>
 				</ul>
 			</div><!--/.nav-collapse -->
-			<sec:authorize access="isAuthenticated()"><h1>Witaj, <sec:authentication property="principal.username" /></h1><a href="<c:url value="/j_spring_security_logout" />" > Logout</a></sec:authorize>
 		</div>
 	</div> 
 	<!-- /.navbar -->
@@ -184,18 +184,18 @@
 				<div class="row">
 					
 					<div class="col-md-3 widget">
-						<h3 class="widget-title">Contact</h3>
+						<h3 class="widget-title">Kontakt</h3>
 						<div class="widget-body">
-							<p>+234 23 9873237<br>
-								<a href="mailto:#">some.email@somewhere.com</a><br>
+							<p>+48 605052247<br>
+								<a href="mailto:#">paykitson@gmail.com</a><br>
 								<br>
-								234 Hidden Pond Road, Ashland City, TN 37015
+								Jana Pawla II, Gliwice, 44-100
 							</p>	
 						</div>
 					</div>
 
 					<div class="col-md-3 widget">
-						<h3 class="widget-title">Follow me</h3>
+						<h3 class="widget-title">Dołącz do nas</h3>
 						<div class="widget-body">
 							<p class="follow-me-icons">
 								<a href=""><i class="fa fa-twitter fa-2"></i></a>
@@ -225,11 +225,11 @@
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="simplenav">
-								<a href="#">Home</a> | 
-								<a href="about">About</a> |
+								<a href="#">Strona Główna</a> | 
+								<a href="about">O nas</a> |
 								<a href="sidebar-right">Sidebar</a> |
-								<a href="contact">Contact</a> |
-								<b><a href="signup">Sign up</a></b>
+								<a href="contact">Kontakt</a> |
+								<b><a href="signup">Rejestracja</a></b>
 							</p>
 						</div>
 					</div>

@@ -1,14 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html lang="pl">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
 	
-	<title>Contact us - Progressus Bootstrap template</title>
+	<title>Skontaktuj się - Darmowe Porady Prawne</title>
 
 	<link rel="shortcut icon" href="../resources/images/gt_favicon.png">
 	
@@ -38,8 +40,8 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a href="home">Home</a></li>
-					<li><a href="about">About</a></li>
+					<li><a href="home">Strona Główna</a></li>
+					<li><a href="about">O nas</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -47,8 +49,9 @@
 							<li><a href="sidebar-right">Right Sidebar</a></li>
 						</ul>
 					</li>
-					<li class="active"><a href="contact">Contact</a></li>
-					<li><a class="btn" href="signin">SIGN IN / SIGN UP</a></li>
+					<li class="active"><a href="contact">Kontakt</a></li>
+					<sec:authorize access="!isAuthenticated()"><li><a class="btn" href="signin">Rejestracja / Logowanie</a></li></sec:authorize>
+					<li><sec:authorize access="isAuthenticated()">Witaj, <sec:authentication property="principal.username" /><a class="btn" href="<c:url value="/j_spring_security_logout" />" >Wyloguj</a></sec:authorize></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -61,8 +64,8 @@
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li><a href="home">Home</a></li>
-			<li class="active">About</li>
+			<li><a href="home">Strona Główna</a></li>
+			<li class="active">O nas</li>
 		</ol>
 
 		<div class="row">
@@ -70,7 +73,7 @@
 			<!-- Article main content -->
 			<article class="col-sm-9 maincontent">
 				<header class="page-header">
-					<h1 class="page-title">Contact us</h1>
+					<h1 class="page-title">Skontaktuj się</h1>
 				</header>
 				
 				<p>
@@ -140,7 +143,7 @@
 				<div class="row">
 					
 					<div class="col-md-3 widget">
-						<h3 class="widget-title">Contact</h3>
+						<h3 class="widget-title">Kontakt</h3>
 						<div class="widget-body">
 							<p>+48 605052247<br>
 								<a href="mailto:#">paykitson@gmail.com</a><br>
@@ -151,7 +154,7 @@
 					</div>
 
 					<div class="col-md-3 widget">
-						<h3 class="widget-title">Follow me</h3>
+						<h3 class="widget-title">Dołącz do nas</h3>
 						<div class="widget-body">
 							<p class="follow-me-icons clearfix">
 								<a href=""><i class="fa fa-twitter fa-2"></i></a>
@@ -181,11 +184,11 @@
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="simplenav">
-								<a href="#">Home</a> | 
-								<a href="about">About</a> |
+								<a href="#">Strona Główna</a> | 
+								<a href="about">O nas</a> |
 								<a href="sidebar-right">Sidebar</a> |
-								<a href="contact">Contact</a> |
-								<b><a href="signup">Sign up</a></b>
+								<a href="contact">Kontakt</a> |
+								<b><a href="signup">Rejestracja</a></b>
 							</p>
 						</div>
 					</div>

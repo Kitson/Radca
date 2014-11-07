@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html lang="pl">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
@@ -51,6 +53,7 @@
 					<li><a class="btn" href="signin">SIGN IN / SIGN UP</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
+			<sec:authorize access="isAuthenticated()"><h1>Witaj, <sec:authentication property="principal.username" /></h1><a href="<c:url value="/j_spring_security_logout" />" > Logout</a></sec:authorize>
 		</div>
 	</div> 
 	<!-- /.navbar -->

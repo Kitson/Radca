@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html lang="pl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="Sergey Pozhilov (GetTemplate.com)">
 
-<title>Sign in - Progressus Bootstrap template</title>
+<title>Sign in - Darmowe Porady Prawne</title>
 <link rel="shortcut icon" href="assets/images/gt_favicon.png">
 
 <link rel="stylesheet" media="screen"
@@ -54,11 +55,11 @@
 							<li><a href="sidebar-right">Right Sidebar</a></li>
 						</ul></li>
 					<li><a href="contact">Contact</a></li>
-					<li class="active"><a class="btn" href="signin">SIGN IN /
-							SIGN UP</a></li>
+					<li class="active"><a class="btn" href="signin">Rejestracja / Logowanie</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
+			<sec:authorize access="isAuthenticated()"><h1>Witaj, <sec:authentication property="principal.username" /></h1><a href="<c:url value="/j_spring_security_logout" />" > Logout</a></sec:authorize>
 		</div>
 	</div>
 	<!-- /.navbar -->
@@ -83,10 +84,10 @@
 
 			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 				<c:if test="${not empty error}">
-							<div class="error">${error}</div>
+							<div class="error-log">${error}</div>
 						</c:if>
 						<c:if test="${not empty msg}">
-							<div class="msg">${msg}</div>
+							<div class="msg-log">${msg}</div>
 						</c:if>
 				<div class="panel panel-default">
 					<div class="panel-body">
@@ -142,13 +143,14 @@
 			<div class="row">
 
 				<div class="col-md-3 widget">
-					<h3 class="widget-title">Contact</h3>
-					<div class="widget-body">
-						<p>
-							+234 23 9873237<br> <a href="mailto:#">some.email@somewhere.com</a><br>
-							<br> 234 Hidden Pond Road, Ashland City, TN 37015
-						</p>
-					</div>
+					<h3 class="widget-title">Kontakt</h3>
+						<div class="widget-body">
+							<p>+48 605052247<br>
+								<a href="mailto:#">paykitson@gmail.com</a><br>
+								<br>
+								Jana Pawla II, Gliwice, 44-100
+							</p>	
+						</div>
 				</div>
 
 				<div class="col-md-3 widget">

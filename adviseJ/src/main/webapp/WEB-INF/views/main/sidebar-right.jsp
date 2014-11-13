@@ -1,31 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pl">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
-	
-	<title>Right Sidebar template - Progressus Bootstrap template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="Sergey Pozhilov (GetTemplate.com)">
 
-	<link rel="shortcut icon" href="../resouces/images/gt_favicon.png">
-	
-	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-	<link rel="stylesheet" href="../resouces/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../resouces/css/font-awesome.min.css">
+<title>Right Sidebar template - Darmowe Porady Prawne</title>
 
-	<!-- Custom styles for our template -->
-	<link rel="stylesheet" href="../resouces/css/bootstrap-theme.css" media="screen" >
-	<link rel="stylesheet" href="../resouces/css/main.css">
+<link rel="shortcut icon" href="../resources/images/gt_favicon.png">
 
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-	<script src="assets/js/html5shiv.js"></script>
-	<script src="assets/js/respond.min.js"></script>
+<link rel="stylesheet" media="screen"
+	href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="../resources/css/font-awesome.min.css">
+
+<!-- Custom styles for our template -->
+<link rel="stylesheet" href="../resources/css/bootstrap-theme.css"
+	media="screen">
+<link rel="stylesheet" href="../resources/css/main.css">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+	<script src="../resources/js/html5shiv.js"></script>
+	<script src="../resources/js/respond.min.js"></script>
 	<![endif]-->
 </head>
 
@@ -36,7 +39,7 @@
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-				<a class="navbar-brand" href="home"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a>
+				<a class="navbar-brand" href="home"><img src="../resources/images/logo.png" alt="Progressus HTML5 template"></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
@@ -64,7 +67,7 @@
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li><a href="index.html">Home</a></li>
+			<li><a href="index">Home</a></li>
 			<li class="active">Right Sidebar</li>
 		</ol>
 
@@ -105,13 +108,13 @@
 				<div class="row widget">
 					<div class="col-xs-12">
 						<h4>Lorem ipsum dolor sit</h4>
-						<p><img src="assets/images/1.jpg" alt=""></p>
+						<p><img src="../resources/images/1.jpg" alt=""></p>
 					</div>
 				</div>
 				<div class="row widget">
 					<div class="col-xs-12">
 						<h4>Lorem ipsum dolor sit</h4>
-						<p><img src="assets/images/2.jpg" alt=""></p>
+						<p><img src="../resources/images/2.jpg" alt=""></p>
 						<p>Qui, debitis, ad, neque reprehenderit laborum soluta dolor voluptate eligendi enim consequuntur eveniet recusandae rerum? Atque eos corporis provident tenetur.</p>
 					</div>
 				</div>
@@ -172,10 +175,10 @@
 						<div class="widget-body">
 							<p class="simplenav">
 								<a href="#">Home</a> | 
-								<a href="about.html">About</a> |
-								<a href="sidebar-right.html">Sidebar</a> |
-								<a href="contact.html">Contact</a> |
-								<b><a href="signup.html">Sign up</a></b>
+								<a href="about">About</a> |
+								<a href="sidebar-right">Sidebar</a> |
+								<a href="contact">Contact</a> |
+								<b><a href="signup">Sign up</a></b>
 							</p>
 						</div>
 					</div>

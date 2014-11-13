@@ -46,15 +46,15 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a href="home">Home</a></li>
-					<li><a href="about">About</a></li>
+					<li><a href="home">Strona Główna</a></li>
+					<li><a href="about">O nas</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">More Pages <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="sidebar-left">Left Sidebar</a></li>
 							<li><a href="sidebar-right">Right Sidebar</a></li>
 						</ul></li>
-					<li><a href="contact">Contact</a></li>
+					<li><a href="contact">Kontakt</a></li>
 					<li class="active"><a class="btn" href="signin">Rejestracja / Logowanie</a></li>
 				</ul>
 			</div>
@@ -70,8 +70,8 @@
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li><a href="index">Home</a></li>
-			<li class="active">User access</li>
+			<li><a href="index">Strona Główna</a></li>
+			<li class="active">Logowanie</li>
 		</ol>
 
 		<div class="row">
@@ -79,7 +79,7 @@
 			<!-- Article main content -->
 			<article class="col-xs-12 maincontent"> <header
 				class="page-header">
-			<h1 class="page-title">Sign in</h1>
+			<h1 class="page-title">Zaloguj</h1>
 			</header>
 
 			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
@@ -91,22 +91,21 @@
 						</c:if>
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<h3 class="thin text-center">Sign in to your account</h3>
+						<h3 class="thin text-center">Zaloguj sie na swoje konto</h3>
 						<p class="text-center text-muted">
-							Lorem ipsum dolor sit amet, <a href="signup">Register</a>
-							adipisicing elit. Quo nulla quibusdam cum doloremque incidunt
-							nemo sunt a tenetur omnis odio.
+							Jesli nie posiadasz jeszcze konta w naszym serwisie, <a href="signup">Zarejestruj się</a>
+							W innym wypadku podaj poprawne dane do logowania.
 						</p>
 						<hr>
 
 						<form name='loginForm' role="form"
 							action="<c:url value='../j_spring_security_check' />" method='POST'>
 							<div class="top-margin">
-								<label>Username/Email <span class="text-danger">*</span></label>
+								<label>Nazwa użytkownika <span class="text-danger">*</span></label>
 								<input type="text" name="username" class="form-control">
 							</div>
 							<div class="top-margin">
-								<label>Password <span class="text-danger">*</span></label> <input
+								<label>Hasło <span class="text-danger">*</span></label> <input
 									type="password" name="password" class="form-control">
 							</div>
 
@@ -114,10 +113,10 @@
 
 							<div class="row">
 								<div class="col-lg-8">
-									<b><a href="">Forgot password?</a></b>
+									<b><a href="">Zapomniałeś hasła?</a></b>
 								</div>
 								<div class="col-lg-4 text-right">
-									<button class="btn btn-action" type="submit">Sign in</button>
+									<button class="btn btn-action" type="submit">Zaloguj</button>
 								</div>
 							</div>
 							<input type="hidden" name="${_csrf.parameterName}"
@@ -154,7 +153,7 @@
 				</div>
 
 				<div class="col-md-3 widget">
-					<h3 class="widget-title">Follow me</h3>
+					<h3 class="widget-title">Dołącz do nas</h3>
 					<div class="widget-body">
 						<p class="follow-me-icons clearfix">
 							<a href=""><i class="fa fa-twitter fa-2"></i></a> <a href=""><i
@@ -193,9 +192,9 @@
 				<div class="col-md-6 widget">
 					<div class="widget-body">
 						<p class="simplenav">
-							<a href="#">Home</a> | <a href="about">About</a> | <a
-								href="sidebar-right">Sidebar</a> | <a href="contact">Contact</a>
-							| <b><a href="signup">Sign up</a></b>
+							<a href="#">Strona Główna</a> | <a href="about">O nas</a> | <a
+								href="sidebar-right">Sidebar</a> | <a href="contact">Kontakt</a>
+							| <b><a href="signup">Zarejestruj się</a></b>
 						</p>
 					</div>
 				</div>
@@ -203,7 +202,7 @@
 				<div class="col-md-6 widget">
 					<div class="widget-body">
 						<p class="text-right">
-							Copyright &copy; 2014, Your name. Designed by <a
+							Copyright &copy; 2014, Jonasz Kitowski. Designed by <a
 								href="http://gettemplate.com/" rel="designer">gettemplate</a>
 						</p>
 					</div>

@@ -80,28 +80,28 @@
 					W czym możemy pomóc?. Jeżeli jesteś zainteresowany otrzymaniem wyceny porady prawnej prosimy o kontakt telefoniczny lub pocztą elektroniczną:
 				</p>
 				<br>
-					<form>
+					<form action="contact" method="POST">
 						<div class="row">
 							<div class="col-sm-4">
-								<input class="form-control" type="text" placeholder="Name">
+								<input class="form-control" type="text" placeholder="Name" name="Name">
 							</div>
 							<div class="col-sm-4">
-								<input class="form-control" type="text" placeholder="Email">
+								<input class="form-control" type="text" placeholder="Email" name="Email">
 							</div>
 							<div class="col-sm-4">
-								<input class="form-control" type="text" placeholder="Phone">
+								<input class="form-control" type="text" placeholder="Phone"name="Phone">
 							</div>
 						</div>
 						<br>
 						<div class="row">
 							<div class="col-sm-12">
-								<textarea placeholder="Type your message here..." class="form-control" rows="9"></textarea>
+								<textarea placeholder="Type your message here..." name="Text" class="form-control" rows="9"></textarea>
 							</div>
 						</div>
 						<br>
 						<div class="row">
 							<div class="col-sm-6">
-								<label class="checkbox"><input type="checkbox"> Sign up for newsletter</label>
+								<label class="checkbox"><input type="checkbox"> Bądź na bierząco</label>
 							</div>
 							<div class="col-sm-6 text-right">
 								<input class="btn btn-action" type="submit" value="Send message">

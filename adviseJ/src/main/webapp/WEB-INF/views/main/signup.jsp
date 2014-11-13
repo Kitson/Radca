@@ -48,15 +48,15 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a href="index">Home</a></li>
-					<li><a href="about">About</a></li>
+					<li><a href="index">Strona Główna</a></li>
+					<li><a href="about">O nas</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">More Pages <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="sidebar-left">Left Sidebar</a></li>
 							<li><a href="sidebar-right">Right Sidebar</a></li>
 						</ul></li>
-					<li><a href="contact">Contact</a></li>
+					<li><a href="contact">Kontakt</a></li>
 					<li class="active"><a class="btn" href="signin">Rejestracja / Logowanie</a></li>
 				</ul>
 			</div>
@@ -72,7 +72,7 @@
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li><a href="home">Home</a></li>
+			<li><a href="home">Strona Główna</a></li>
 			<li class="active">Rejestracja</li>
 		</ol>
 
@@ -211,9 +211,9 @@
 				<div class="col-md-6 widget">
 					<div class="widget-body">
 						<p class="simplenav">
-							<a href="#">Home</a> | <a href="about">About</a> | <a
-								href="sidebar-right">Sidebar</a> | <a href="contact">Contact</a>
-							| <b><a href="signup">Sign up</a></b>
+							<a href="#">Strona Główna</a> | <a href="about">O nas</a> | <a
+								href="sidebar-right">Sidebar</a> | <a href="contact">Kontakt</a>
+							| <b><a href="signup">Rejestracja</a></b>
 						</p>
 					</div>
 				</div>
@@ -221,7 +221,7 @@
 				<div class="col-md-6 widget">
 					<div class="widget-body">
 						<p class="text-right">
-							Copyright &copy; 2014, Your name. Designed by <a
+							Copyright &copy; 2014, Jonasz Kitowski. Designed by <a
 								href="http://gettemplate.com/" rel="designer">gettemplate</a>
 						</p>
 					</div>

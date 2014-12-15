@@ -8,7 +8,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
-	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	<meta name="author"      content="Jonasz Kitowski">
 	
 	<title>Skontaktuj się - Darmowe Porady Prawne</title>
 
@@ -43,9 +43,9 @@
 					<li><a href="home">Strona Główna</a></li>
 					<li><a href="about">O nas</a></li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Wiecej Stron <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="sidebar-left">Left Sidebar</a></li>
+							<li><a href="advice">Porada</a></li>
 							<li><a href="sidebar-right">Right Sidebar</a></li>
 						</ul>
 					</li>
@@ -83,19 +83,19 @@
 					<form action="contact" method="POST">
 						<div class="row">
 							<div class="col-sm-4">
-								<input class="form-control" type="text" placeholder="Name" name="Name">
+								<input class="form-control" required="required" type="text" placeholder="Name" name="Name">
 							</div>
 							<div class="col-sm-4">
-								<input class="form-control" type="text" placeholder="Email" name="Email">
+								<input class="form-control" required="required" type="email" placeholder="Email" name="Email">
 							</div>
 							<div class="col-sm-4">
-								<input class="form-control" type="text" placeholder="Phone"name="Phone">
+								<input class="form-control" required="required" type="text" placeholder="Phone"name="Phone">
 							</div>
 						</div>
 						<br>
 						<div class="row">
 							<div class="col-sm-12">
-								<textarea placeholder="Type your message here..." name="Text" class="form-control" rows="9"></textarea>
+								<textarea placeholder="Type your message here..." required="required" name="Text" class="form-control" rows="9"></textarea>
 							</div>
 						</div>
 						<br>

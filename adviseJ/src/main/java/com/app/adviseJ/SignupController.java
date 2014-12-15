@@ -52,11 +52,12 @@ public class SignupController {
 			@RequestParam("email") String email,
 			@RequestParam("password") String password,
 			@RequestParam("confirmPassword") String confirmpassword,
+			@RequestParam("enabled") boolean enabled,
 			Model model) {
 		String name = firstname + " " + lastname;
 		List<String> errors = new ArrayList<String>();
 		String hashpw = BCrypt.hashpw(password, BCrypt.gensalt());
-		user = new User(name, password, true, email);
+		user = new User(name, password, enabled, email);
 		ValidatorFactory validatorFactory = Validation
 				.buildDefaultValidatorFactory();
 		Validator validator = validatorFactory.getValidator();

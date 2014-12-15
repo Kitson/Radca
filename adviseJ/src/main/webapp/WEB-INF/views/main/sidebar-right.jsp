@@ -9,7 +9,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="author" content="Sergey Pozhilov (GetTemplate.com)">
+<meta name="author" content="Jonasz Kitowski">
 
 <title>Right Sidebar template - Darmowe Porady Prawne</title>
 
@@ -43,16 +43,16 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a href="home">Home</a></li>
-					<li><a href="about">About</a></li>
+					<li><a href="home">Strona Główna</a></li>
+					<li><a href="about">O nas</a></li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Wiecej Stron <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="sidebar-left">Left Sidebar</a></li>
+							<li><a href="sidebar-left">Porada</a></li>
 							<li class="active"><a href="sidebar-right">Right Sidebar</a></li>
 						</ul>
 					</li>
-					<li><a href="contact">Contact</a></li>
+					<li><a href="contact">Kontakt</a></li>
 					<li><a class="btn" href="signin">SIGN IN / SIGN UP</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
@@ -67,7 +67,7 @@
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li><a href="index">Home</a></li>
+			<li><a href="home">Strona Główna</a></li>
 			<li class="active">Right Sidebar</li>
 		</ol>
 
@@ -132,16 +132,15 @@
 			<div class="container">
 				<div class="row">
 					
-					<div class="col-md-3 widget">
-						<h3 class="widget-title">Contact</h3>
-						<div class="widget-body">
-							<p>+234 23 9873237<br>
-								<a href="mailto:#">some.email@somewhere.com</a><br>
-								<br>
-								234 Hidden Pond Road, Ashland City, TN 37015
-							</p>	
-						</div>
+							<div class="col-md-3 widget">
+					<h3 class="widget-title">Kontakt</h3>
+					<div class="widget-body">
+						<p>
+							+48 605052247<br> <a href="mailto:#">paykitson@gmail.com</a><br>
+							<br> Jana Pawla II, Gliwice, 44-100
+						</p>
 					</div>
+				</div>
 
 					<div class="col-md-3 widget">
 						<h3 class="widget-title">Follow me</h3>
@@ -174,10 +173,10 @@
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="simplenav">
-								<a href="#">Home</a> | 
-								<a href="about">About</a> |
+								<a href="#">Strona Główna</a> | 
+								<a href="about">O nas</a> |
 								<a href="sidebar-right">Sidebar</a> |
-								<a href="contact">Contact</a> |
+								<a href="contact">Kontakt</a> |
 								<b><a href="signup">Sign up</a></b>
 							</p>
 						</div>

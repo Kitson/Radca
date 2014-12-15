@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.*;
@@ -21,7 +22,7 @@ public class User {
 	@NotBlank(message = "Pole nazwa użytkownika nie może być puste.") @Length (min = 5, max = 20, message = "Długość nazwy użytkownika musi mieścić się miedzy 5 a 20 znaków.") private String username;
 	@NotBlank(message = "Pole hasło nie może być puste.") @Length (min = 5, max = 100, message = "Długość hasła musi mieścić się miedzy 5 a 100 znaków.") private String password;
 	@NotBlank(message = "Pole email nie może być puste.")@Email(message = "Podany adres email jest nieprawidłowy.") private String email;
-	private boolean enabled;
+	@AssertTrue(message ="Musisz zaakceptować regulamin.") private boolean enabled;
 	private Set<UserRole> userRole = new HashSet<UserRole>(0);
  
 	public User() {

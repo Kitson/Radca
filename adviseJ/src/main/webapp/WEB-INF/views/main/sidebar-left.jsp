@@ -9,9 +9,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="author" content="Sergey Pozhilov (GetTemplate.com)">
+<meta name="author" content="Jonasz Kitowski">
 
-<title>Left Sidebar template - Darmowe Porady Prawne</title>
+<title>Porada template - Darmowe Porady Prawne</title>
 
 <link rel="shortcut icon" href="../resources/images/gt_favicon.png">
 
@@ -19,7 +19,8 @@
 	href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
 <link rel="stylesheet" href="../resources/css/font-awesome.min.css">
-
+<link rel="stylesheet" media="screen"
+	href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.svg">
 <!-- Custom styles for our template -->
 <link rel="stylesheet" href="../resources/css/bootstrap-theme.css"
 	media="screen">
@@ -48,15 +49,15 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a href="index">Home</a></li>
-					<li><a href="about">About</a></li>
+					<li><a href="home">Strona Główna</a></li>
+					<li><a href="about">O nas</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">More Pages <b class="caret"></b></a>
+						data-toggle="dropdown">Wiecej Stron <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li class="active"><a href="sidebar-left">Left Sidebar</a></li>
+							<li class="active"><a href="advice">Porada</a></li>
 							<li><a href="sidebar-right">Right Sidebar</a></li>
 						</ul></li>
-					<li><a href="contact">Contact</a></li>
+					<li><a href="contact">Kontakt</a></li>
 					<li><a class="btn" href="signin">Rejestracja / Logowanie</a></li>
 				</ul>
 			</div>
@@ -71,8 +72,8 @@
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li><a href="home">Home</a></li>
-			<li class="active">Left Sidebar</li>
+			<li><a href="home">Strona Główna</a></li>
+			<li class="active">Porada</li>
 		</ol>
 
 		<div class="row">
@@ -113,64 +114,36 @@
 
 			<!-- Article main content -->
 			<article class="col-md-8 maincontent"> <header
-				class="page-header">
-			<h1 class="page-title">Lorem ipsum dolor sit amet, consectetur.</h1>
+				class="page-header"> <c:if test="${not empty success}">
+			<div class="msg-log">${success}</div>
+		</c:if>
+		<c:if test="${not empty fail or failed == true}">
+			<div class="error-log">${fail}</div>
+		</c:if>
+			<h1 class="page-title">Wypełnij ponizszy formularz w celu
+				uzyskania porady.</h1>
 			</header>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-				Laudantium, itaque, cumque, maxime obcaecati reprehenderit ea
-				dignissimos amet voluptatem id excepturi facilis totam veritatis
-				maiores eveniet neque explicabo temporibus quisquam in ex ab fugiat
-				ipsa tempore sunt corporis nostrum quam illum!</p>
-			<p>Consectetur cupiditate labore repudiandae beatae nisi fugiat
-				facilis natus illum vitae doloremque. In, perspiciatis, natus,
-				impedit voluptas itaque odio repudiandae placeat nisi totam
-				repellendus earum dolores mollitia tempore quasi beatae alias cum
-				dicta maxime laborum corporis harum porro magnam laboriosam.</p>
-			<p>Aut, eaque, minus atque alias odio mollitia cum nisi ipsa
-				nulla natus quae minima similique ipsam aspernatur molestias animi
-				in deleniti nam. Tempora, labore, modi eum perspiciatis doloremque
-				sequi nam illo corporis iusto maiores nisi recusandae repellat animi
-				reiciendis accusamus.</p>
+			<form method="post" enctype="multipart/form-data" action="advice">
+				<p>Tutaj opisz czego dotyczy problem.</p>
+				<textarea name="message" id="message" class="form-control" rows="9"
+					cols="25" required="required" placeholder="Wiadomość"></textarea>
+				<p>Tutaj dodaj dokumenty ktore beda niezbędne do analizy.</p>
 
-			<h2>A, quibusdam, nobis, eveniet consequatur</h2>
-			<p>A, quibusdam, nobis, eveniet consequatur alias doloremque
-				officia blanditiis fuga et numquam labore reiciendis voluptas quis
-				repellat quos sunt non dolore consectetur at sit nam tenetur
-				dolorem? Harum, quas, sit perspiciatis esse odit temporibus aperiam
-				nulla aspernatur sequi fugiat tempore?</p>
-			<p>Ad velit consequuntur quo qui odit quam sapiente repudiandae
-				et ea pariatur? Ex sapiente beatae nobis consectetur ea. Deleniti,
-				beatae, magnam, dolorum, fuga nostrum quas laboriosam sapiente
-				temporibus enim voluptates ullam impedit atque quae provident quos
-				mollitia aperiam perferendis amet.</p>
-
-			<blockquote>Numquam, ut iure quia facere totam quas odit
-				illo incidunt. Voluptatem, nostrum, ex, quasi incidunt similique cum
-				maxime expedita unde labore inventore excepturi veniam corporis
-				sequi facere ullam voluptates amet illum quam fuga voluptatibus
-				ipsum atque sunt eos. Ut, necessitatibus.</blockquote>
-			<p>Odit, laudantium, dolores, natus distinctio labore voluptates
-				in inventore quasi qui nobis quis adipisci fugit id! Aliquam alias
-				ea modi. Porro, odio, sed veniam hic numquam qui ad molestiae sint
-				placeat expedita? Perferendis, enim qui numquam sequi obcaecati
-				molestiae fugiat!</p>
-			<p>Aperiam, odit, quasi, voluptate fugiat quisquam velit magni
-				provident corporis animi facilis illo eveniet eum obcaecati adipisci
-				blanditiis quas labore doloribus eos veniam repudiandae suscipit
-				tempora ad harum odio eius distinctio hic deleniti. Sunt fuga ad
-				perspiciatis repellat deleniti omnis!</p>
-
-			<h3>Numquam, ut iure quia facere totam quas odit illo incidunt</h3>
-			<p>Est, maiores, fuga sed nemo qui veritatis ducimus placeat odit
-				quisquam dolorum. Rem, sunt, praesentium veniam maiores quia
-				molestias eos fugit eaque ducimus veritatis provident assumenda.
-				Quia, fuga, voluptates voluptatibus quis enim nam asperiores aliquam
-				dignissimos ullam recusandae debitis iste.</p>
-			<p>Dignissimos, beatae, praesentium illum eos autem perspiciatis?
-				Minus, non, tempore, illo, mollitia exercitationem tempora quas
-				harum odio dolores delectus quidem laudantium adipisci ducimus ullam
-				placeat eaque minima quae iure itaque corporis magni nesciunt eius
-				sed dolor doloremque id quasi nisi.</p>
+				<p>
+					<span style="font-size: 10.0 em" class="glyphicon glyphicon-circle-arrow-down center"></span>
+				</p>
+				<p>
+					<span class="btn btn-default btn-file"> <input type="file"
+						name="file" class="form-control" placeholder="pliki" multiple></input>
+					</span>
+				</p>
+				<p>
+				<span style="font-size: 10.0 em" class="glyphicon glyphicon-circle-arrow-down center"></span>
+				</p>
+				<p>
+					<button type="submit" class="btn btn-default">Zatwierdz</button>
+				</p>
+			</form>
 			</article>
 			<!-- /Article -->
 
@@ -185,12 +158,12 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-md-3 widget">
-					<h3 class="widget-title">Contact</h3>
+							<div class="col-md-3 widget">
+					<h3 class="widget-title">Kontakt</h3>
 					<div class="widget-body">
 						<p>
-							+234 23 9873237<br> <a href="mailto:#">some.email@somewhere.com</a><br>
-							<br> 234 Hidden Pond Road, Ashland City, TN 37015
+							+48 605052247<br> <a href="mailto:#">paykitson@gmail.com</a><br>
+							<br> Jana Pawla II, Gliwice, 44-100
 						</p>
 					</div>
 				</div>
@@ -235,8 +208,8 @@
 				<div class="col-md-6 widget">
 					<div class="widget-body">
 						<p class="simplenav">
-							<a href="#">Home</a> | <a href="about">About</a> | <a
-								href="sidebar-right">Sidebar</a> | <a href="contact">Contact</a>
+							<a href="#">Home</a> | <a href="about">O nas</a> | <a
+								href="sidebar-right">Sidebar</a> | <a href="contact">Kontakt</a>
 							| <b><a href="signup">Sign up</a></b>
 						</p>
 					</div>

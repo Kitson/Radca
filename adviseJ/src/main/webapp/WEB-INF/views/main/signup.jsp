@@ -48,12 +48,12 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a href="index">Strona Główna</a></li>
+					<li><a href="home">Strona Główna</a></li>
 					<li><a href="about">O nas</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">More Pages <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="sidebar-left">Left Sidebar</a></li>
+							<li><a href="advice">Porada</a></li>
 							<li><a href="sidebar-right">Right Sidebar</a></li>
 						</ul></li>
 					<li><a href="contact">Kontakt</a></li>
@@ -104,26 +104,26 @@
 
 						<form action="signup" method="POST">
 							<div class="top-margin">
-								<label>Imie</label> <input type="text" name="firstName"
+								<label>Imie</label> <input type="text" required="required" name="firstName"
 									class="form-control">
 							</div>
 							<div class="top-margin">
-								<label>Nazwisko</label> <input type="text" name="lastName"
+								<label>Nazwisko</label> <input type="text" required="required" name="lastName"
 									class="form-control">
 							</div>
 							<div class="top-margin">
 								<label>Adres Email <span class="text-danger">*</span></label> <input
-									type="text" name="email" class="form-control">
+									type="text" required="required" name="email" class="form-control">
 							</div>
 
 							<div class="row top-margin">
 								<div class="col-sm-6">
 									<label>Hasło <span class="text-danger">*</span></label> <input
-										type="password" name="password" class="form-control">
+										type="password" required="required" name="password" class="form-control">
 								</div>
 								<div class="col-sm-6">
 									<label>Powtórz Hasło <span class="text-danger">*</span></label>
-									<input type="password" name="confirmPassword"
+									<input type="password" required="required" name="confirmPassword"
 										class="form-control">
 								</div>
 							</div>
@@ -132,7 +132,7 @@
 
 							<div class="row">
 								<div class="col-lg-8">
-									<label class="checkbox"> <input type="checkbox">
+									<label class="checkbox"> <input type="checkbox" required="required" name="enabled">
 										Zapoznałem się z <a href="page_terms">Regulaminem</a>
 									</label>
 								</div>

@@ -69,4 +69,9 @@ public class HomeController {
 
 		return "main/sidebar-right";
 	}
+	@RequestMapping(value = "main/page_terms", method = RequestMethod.GET)
+	public String page_terms(Locale locale,Model model)
+	{
+		return"main/page_terms";
+	}
 }

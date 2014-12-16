@@ -84,6 +84,67 @@
 			<h1 class="page-title">Regulamin</h1>
 			</header>
 				<div class="panel panel-default">
+					<h3>I. Postanowienia ogólne</h3>
+<p>§1. Niniejszy portal wraz ze wszystkimi powiązanymi z nim usługami udostępniony zostaje Użytkownikom przez spółkę … sp. z o.o. z siedzibą w Gliwicach przy ul. Akademickiej, zarejestrowaną w Krajowym Rejestrze Sądowym – rejestrze przedsiębiorców prowadzonym przez Sąd Rejonowy dla Gliwice, Wydział X Gospodarczy Krajowego Rejestru Sądowego pod numerem KRS xxxxxxxxxx, kapitał zakładowy 5 000 zł
+, NIP xxx-xx-xx-xxx, zwaną dalej Usługodawcą.
+ 
+<p>§2. Niniejszy regulamin określa zasady funkcjonowania portalu, korzystania z niego, jak i tego prawne konsekwencje. Każda osoba korzystająca z portalu, zwana dalej Użytkownikiem, zostaje o tym pouczona bezpośrednio przed połączeniem z portalem. Każdy Użytkownik zobowiązany jest do zapoznania się z regulaminem, na którego postanowienia godzi się, łącząc się z portalem.
+ 
+<p>§3. W sprawach nieuregulowanych niniejszym regulaminem zastosowanie mają przepisy prawa polskiego, zaś wszelkie spory podlegają jurysdykcji sądów polskich.
+ 
+
+<h3>II. Zasady korzystania z portalu</h3>
+<p>§4. Wyznaczona przez Usługodawcę osoba, zwana dalej Administratorem może w ramach powierzonych jej kompetencji:
+<p>a)  	Weryfikować zamieszczone przez Użytkowników dane, a w razie stwierdzenia naruszenia postanowień niniejszego regulaminu lub/i prawa polskiego podejmować stosowne działania, aż po usunięcie konta użytkownika włącznie.</p>
+<p>b)  	Kontaktować się z Użytkownikami w celu pozyskania stosownych wyjaśnień lub przekazania informacji na temat skradzionego przedmiotu, jeśli osoba od której informacje te zostały pozyskane nie życzy sobie ujawnienia jej danych.</p>
+<p>c)  	Współpracować ze stosownymi służbami, zwłaszcza z Policją w celu ułatwienia przeprowadzanych procedur, jednak z zastrzeżeniem postanowień zawartych w §7.</p>
+<p>§5. Korzystając z portalu „skradzione.com” Użytkownik może w szczególności:</p>
+<p>a)  	Zapoznawać się z danymi udostępnionymi przez administratora portalu lub innych Użytkowników.</p>
+<p>b)  	Zamieszczać dane w ramach specyfikacji rzeczy skradzionej w następującym porządku:</p>
+<p>·         miejsce dokonania kradzieży (województwo/miasto/ulica)</p>
+<p>·         przedmiot kradzieży oraz jej opis lub/i zdjęcia</p>
+<p>·         przybliżona data oraz czas dokonania kradzieży</p>
+<p>·         dodatkowe dane dotyczące okoliczności zdarzenia lub mogące ułatwić poszukiwania</p>
+<p>c)  	Kierować zapytania do Administratora portalu oraz za pośrednictwem portalu przesyłać innym użytkownikom wiadomości dotyczące udostępnionych danych.</p>
+ 
+<h3>III. Polityka prywatności</h3>
+<p>§6. Podczas korzystania z serwisu na komputerze Użytkownika zapisywane są krótkie informacje tekstowe, zwane „cookies”. Jest to konieczne w celu poprawnego funkcjonowania procesu autoryzacji w serwisie.</p>
+<p>§7. Zgodnie z Ustawą o ochronie danych osobowych oraz Ustawą o świadczeniu usług drogą elektroniczną portal nie udostępnia osobom prywatnym danych Użytkowników. Zgodnie z powyższymi aktami prawnymi może to nastąpić tylko na wniosek organów państwa i tylko na potrzeby prowadzonych postępowań.</p>
+<p>§7.1. W razie udostępnienia danych osobowych Użytkownika według procedury określonej w §7 Użytkownik zostaje niezwłocznie o tym fakcie poinformowany. Ma on prawo złożyć protest w formie reklamacji, zgodnie z §11.</p>
+ 
+<h3>IV. Postępowanie z udostępnianymi w serwisie danymi</h3>
+<p>§8. Użytkownik udostępniający w serwisie dane oświadcza że dane te są prawdziwe.</p>
+<p>§9. Udostępniane w serwisie dane mogą być przetwarzane i udostępniane według procedur opisanych w §4 a) i c) oraz §7.</p>
+<p>§10. Usługodawca zastrzega sobie prawo do niewprowadzenia do serwisu lub usunięcia z niego danych, które uzna za nierzetelne, niezgodne z netykietą lub których udostępnianie według Ustawy o ochronie informacji niejawnych sprzeczne jest z prawem.</p>
+<p>§10.1. W razie zaistnienia okoliczności opisanych w §9 każdy Użytkownik mający w tym interes prawny lub faktyczny ma prawo złożyć protest w formie reklamacji, zgodnie z §11.</p>
+ 
+<h3>V. Postępowanie reklamacyjne</h3>
+<p>§11. Użytkownik wnosi reklamację za pośrednictwem serwisu.</p>
+<p>§11.1. Reklamacja Użytkownika rozpatrywana jest w terminie 7 dni roboczych. W razie skomplikowanego charakteru okoliczności stanowiących przedmiot reklamacji lub uzależnienia kierunku w jakim zostanie rozpatrzona od decyzji organu państwa Usługodawca zastrzega sobie prawo do przedłużenia wskazanego wcześniej terminu. O fakcie tym niezwłocznie informuje Użytkownika.</p>
+ 
+<h3>VI. Własność intelektualna</h3>
+<p>§12. Portal „skradzione.com” oraz zawarte w nim materiały, a w szczególności utwory, bazy danych i znaki towarowe podlegają ochronie przewidzianej w przepisach prawa, zwłaszcza w ustawie o ochronie praw autorskich i pokrewnych, ustawie o ochronie baz danych, ustawie Prawo własności przemysłowej oraz ustawie o zwalczaniu nieuczciwej konkurencji.</p>
+<p>§13. Poprzez korzystanie z portalu Użytkownicy nie nabywają żadnych praw ani nie uzyskują licencji w stosunku do zawartych na nim treści.</p>
+ 
+<h3>VII. Odpowiedzialność Usługodawcy</h3>
+<p>§14. Usługodawca nie ponosi odpowiedzialności za:</p>
+<p>a)  	Sposób w jaki Użytkownicy wykorzystują pozyskane dane.</p>
+<p>b)  	Materiały zamieszczanie w portalu.</p>
+<p>c)  	Szkody wynikłe ze sprzecznego z prawem lub niniejszym regulaminem wykorzystania zawartych w portalu danych.</p>
+<p>d)  	Szkody spowodowane zagrożeniami sieci internet, w tym włamanie do systemu Użytkownika, zainfekowanie systemu Użytkownika wirusami lub przejęcie jego haseł przez osoby trzecie.</p>
+ 
+<h3>VIII. Płatność</h3>
+<p>§15. Korzystanie z usług wyszukiwania, przeglądania i komentowania zamieszczonych informacji dostępne jest nieodpłatnie.</p>
+<p>§16. Korzystanie z usługi zamieszczania tematu oraz otrzymywanie za pośrednictwem portalu informacji dotyczących skradzionego przedmiotu obciążone jest płatnością ściąganą poprzez wysyłaną przez Użytkownika wiadomość SMS na numer wskazany przez Usługodawcę (koszt 9zł + VAT) lub systemy płatności Paypal, dotpay, przelew bankowy (koszt 6zł). Ogłoszenie publikowane będzie na portalu przez 30 dni od daty zapłaty.</p>
+<p>§17. W przypadku odnalezienia przedmiotu właścicielom portalu „skradzione.com” należy się prowizja w wysokości 5% ze znaleźnego przekazywanego na rzecz użytkownika, który udzielił informacji lub znalazł przedmiot. Użytkownicy nie mogą wymieniać się informacjami ani przeprowadzać żadnych transakcji poza portalem „skradzione.com”, w razie złamania powyższego punktu użytkownik wystawiający ogłoszenie zobowiązany jest do zapłacenia kary finansowej o wysokości 2-krotnej wartości przedmiotu ustalonej przez rzeczoznawcę, którego dotyczyło ogłoszenie.</p>
+ 
+<p>§18. Ściągana opłata nie gwarantuje znalezienia skradzionego przedmiotu. Usługodawca nie przewiduje zwrotu płatności w przypadku jeśli Użytkownik nie czuje się usatysfakcjonowany uzyskanymi informacjami lub ich brakiem.</p>
+ 
+<h3>IX. Postanowienia końcowe</h3>
+<p>§19. Usługodawca zastrzega sobie prawo zmiany niniejszego regulaminu.</p>
+<p>§19.1. Wszelkie zmiany wchodzą w życie z dniem ich publikacji na portalu.</p>
+<p>§19.2. Korzystając z portalu Użytkownik akceptuje wszelkie wprowadzone zmiany.</p>
+<p>§20. Usługodawca może w każdym czasie zakończyć świadczenie usług lub zmienić ich zakres.</p>
 					
 				</div>
 

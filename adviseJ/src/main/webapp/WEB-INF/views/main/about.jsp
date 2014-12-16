@@ -51,7 +51,11 @@
 					</li>
 					<li><a href="contact">Kontakt</a></li>
 					<sec:authorize access="!isAuthenticated()"><li><a class="btn" href="signin">Rejestracja / Logowanie</a></li></sec:authorize>
-					<li><sec:authorize access="isAuthenticated()">Witaj, <sec:authentication property="principal.username" /><a class="btn" href="<c:url value="/j_spring_security_logout" />" >Wyloguj</a></sec:authorize></li>
+										<li><sec:authorize access="isAuthenticated()"><p style="color:white;">Witaj, <sec:authentication
+								property="principal.username" /></p>
+							<a class="btn btn-action" style="color: white"
+								href="<c:url value="/j_spring_security_logout" />">Wyloguj</a>
+						</sec:authorize></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>

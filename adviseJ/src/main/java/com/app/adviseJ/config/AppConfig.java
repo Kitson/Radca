@@ -24,8 +24,9 @@ public class AppConfig {
         public SessionFactory sessionFactory() {
                 LocalSessionFactoryBuilder builder = 
 			new LocalSessionFactoryBuilder(dataSource());
-                builder.scanPackages("com.app.adviseJ.users.model")
+                builder.scanPackages("com.app.adviseJ.message.model")
                       .addProperties(getHibernateProperties());
+                builder.scanPackages("com.app.adviseJ.users.model").addProperties(getHibernateProperties());
  
                 return builder.buildSessionFactory();
         }

@@ -27,7 +27,6 @@ public class UserDaoImpl implements UserDao {
 				.createQuery("from User where username=?")
 				.setParameter(0, username).list();
 
-		
 		if (users.size() > 0) {
 			return users.get(0);
 		} else {

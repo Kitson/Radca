@@ -61,7 +61,11 @@
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
-			<sec:authorize access="isAuthenticated()"><h1>Witaj, <sec:authentication property="principal.username" /></h1><a href="<c:url value="/j_spring_security_logout" />" > Logout</a></sec:authorize>
+								<li><sec:authorize access="isAuthenticated()"><p style="color:white;">Witaj, <sec:authentication
+								property="principal.username" /></p>
+							<a class="btn btn-action" style="color: white"
+								href="<c:url value="/j_spring_security_logout" />">Wyloguj</a>
+						</sec:authorize></li>
 		</div>
 	</div>
 	<!-- /.navbar -->

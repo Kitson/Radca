@@ -3,7 +3,14 @@ package com.app.adviseJ.adviser;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.security.Principal;
 
+import javax.servlet.ServletContext;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,9 +19,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.app.adviseJ.message.dao.MessageDao;
+import com.app.adviseJ.message.dao.MessageDaoImpl;
+import com.app.adviseJ.message.model.Message;
+import com.app.adviseJ.users.dao.UserDao;
+
 @Controller
 public class AdviseController {
-
+	@Autowired
+	private MessageDao messageDao;
 	@RequestMapping(value = "/main/advice", method = RequestMethod.GET)
 	public String getAdviceInfo(@RequestParam(required = false)  boolean success,
 			@RequestParam(required = false)  boolean failed,
@@ -36,13 +49,28 @@ public class AdviseController {
 			@RequestParam("file") MultipartFile file) {
 		if (!file.isEmpty()) {
 			try {
+				String rootPath = System.getProperty("catalina.home");
+				File dir = new File(rootPath + File.separator + "tmpFiles");
+                System.out.println(rootPath);
+                System.out.println(dir);
+                if (!dir.exists())
+                    dir.mkdirs();
 				byte[] bytes = file.getBytes();
 				String name = file.getOriginalFilename();
+				 File serverFile = new File(dir.getAbsolutePath()
+	                        + File.separator + name);
+				 System.out.println(serverFile);
+
 				BufferedOutputStream stream = new BufferedOutputStream(
-						new FileOutputStream(new File("uploaded-" + name)));
+						new FileOutputStream(serverFile));
 				stream.write(bytes);
 				stream.close();
 				System.out.println("Wrzucono plik:"+name);
+				Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			      String username = auth.getName();
+			      System.out.println(serverFile.getName());
+				Message message1 = new Message(serverFile.getAbsolutePath(),message,username); 
+				messageDao.insertMessage(message1);
 				return new ModelAndView("redirect:/main/advice?success=true");
 			} catch (Exception e) {
 				System.out.println("Blad: "+e.getMessage());

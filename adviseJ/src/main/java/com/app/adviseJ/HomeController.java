@@ -29,7 +29,14 @@ public class HomeController {
 	public String welcome(Model model) {
 		return "welcome";
 	}
-
+	@RequestMapping(value = "/403",method = RequestMethod.GET)
+	public String accessDenied(Model model) {
+		return "403";
+	}
+	@RequestMapping(value = "/admin/403",method = RequestMethod.GET)
+	public String accessDenied1(Model model) {
+		return "403";
+	}
 	@RequestMapping(value = "main/home", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 

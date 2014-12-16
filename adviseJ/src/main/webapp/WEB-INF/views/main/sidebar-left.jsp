@@ -58,7 +58,14 @@
 							<li><a href="sidebar-right">Right Sidebar</a></li>
 						</ul></li>
 					<li><a href="contact">Kontakt</a></li>
+					<sec:authorize access="!isAuthenticated()">
 					<li><a class="btn" href="signin">Rejestracja / Logowanie</a></li>
+					</sec:authorize>
+										<li><sec:authorize access="isAuthenticated()"><p style="color:white;">Witaj, <sec:authentication
+								property="principal.username" /></p>
+							<a class="btn btn-action" style="color: white"
+								href="<c:url value="/j_spring_security_logout" />">Wyloguj</a>
+						</sec:authorize></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -130,7 +137,7 @@
 				<p>Tutaj dodaj dokumenty ktore beda niezbędne do analizy.</p>
 
 				<p>
-					<span style="font-size: 10.0 em" class="glyphicon glyphicon-circle-arrow-down center"></span>
+					<span style="font-size: 10.0 em" class="glyphicon glyphicon-circle-arrow-down"></span>
 				</p>
 				<p>
 					<span class="btn btn-default btn-file"> <input type="file"
@@ -138,7 +145,7 @@
 					</span>
 				</p>
 				<p>
-				<span style="font-size: 10.0 em" class="glyphicon glyphicon-circle-arrow-down center"></span>
+				<span style="font-size: 10.0 em" class="glyphicon glyphicon-circle-arrow-down"></span>
 				</p>
 				<p>
 					<button type="submit" class="btn btn-default">Zatwierdz</button>
@@ -158,12 +165,12 @@
 		<div class="container">
 			<div class="row">
 
-							<div class="col-md-3 widget">
+				<div class="col-md-3 widget">
 					<h3 class="widget-title">Kontakt</h3>
 					<div class="widget-body">
 						<p>
-							+48 605052247<br> <a href="mailto:#">paykitson@gmail.com</a><br>
-							<br> Jana Pawla II, Gliwice, 44-100
+							+234 23 9873237<br> <a href="mailto:#">some.email@somewhere.com</a><br>
+							<br> 234 Hidden Pond Road, Ashland City, TN 37015
 						</p>
 					</div>
 				</div>

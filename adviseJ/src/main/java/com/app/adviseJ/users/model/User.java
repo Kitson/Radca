@@ -14,25 +14,27 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.*;
 import org.hibernate.validator.*;
+
 @Entity
 @Table(name = "users", catalog = "radca_spring")
 
 public class User {
-	
 	@NotBlank(message = "Pole nazwa użytkownika nie może być puste.") @Length (min = 5, max = 20, message = "Długość nazwy użytkownika musi mieścić się miedzy 5 a 20 znaków.") private String username;
 	@NotBlank(message = "Pole hasło nie może być puste.") @Length (min = 5, max = 100, message = "Długość hasła musi mieścić się miedzy 5 a 100 znaków.") private String password;
 	@NotBlank(message = "Pole email nie może być puste.")@Email(message = "Podany adres email jest nieprawidłowy.") private String email;
 	@AssertTrue(message ="Musisz zaakceptować regulamin.") private boolean enabled;
 	private Set<UserRole> userRole = new HashSet<UserRole>(0);
+	private String passwordConfirm;
  
 	public User() {
 	}
  
-	public User(String username, String password, boolean enabled,String email) {
+	public User(String username, String password, boolean enabled,String email,String passwordConfirm) {
 		this.username = username;
 		this.password = password;
 		this.enabled = enabled;
 		this.email = email;
+		this.passwordConfirm = passwordConfirm;
 	}
  
 	public User(String username, String password, 
@@ -91,5 +93,6 @@ public class User {
 	public void setUserRole(Set<UserRole> userRole) {
 		this.userRole = userRole;
 	}
+
  
 }

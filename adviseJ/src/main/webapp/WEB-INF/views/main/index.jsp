@@ -60,10 +60,20 @@
 					<sec:authorize access="!isAuthenticated()">
 						<li><a class="btn" href="signin">Rejestracja / Logowanie</a></li>
 					</sec:authorize>
-					<li><sec:authorize access="isAuthenticated()"><p style="color:white;">Witaj, <sec:authentication
-								property="principal.username" /></p>
+					<sec:authorize access="isAuthenticated()">
+						<li style="color: white;">
+							<button class="btn btn-disabled">
+								Witaj
+								<sec:authentication property="principal.username" />
+								!
+							</button>
+						</li>
+						<li><a class="btn btn-action" style="color: white"
+							href="<c:url value="/j_spring_security_logout" />">Wyloguj</a></li>
+					</sec:authorize>
+					<li><sec:authorize access="hasRole('ROLE_ADMIN')">
 							<a class="btn btn-action" style="color: white"
-								href="<c:url value="/j_spring_security_logout" />">Wyloguj</a>
+								href="<c:url value="/admin/" />">Panel Administracyjny</a>
 						</sec:authorize></li>
 				</ul>
 			</div>
@@ -81,8 +91,9 @@
 				Darmowe porady prawne.<a href="signup">Zarejestruj</a> się juz dziś.
 			</p>
 			<p>
-				<a class="btn btn-default btn-lg" href="about" role="button">WIĘCEJ INFORMACJI</a> <a
-					class="btn btn-action btn-lg" role="button">PORADŹ SIĘ TERAZ</a>
+				<a class="btn btn-default btn-lg" href="about" role="button">WIĘCEJ
+					INFORMACJI</a> <a class="btn btn-action btn-lg" href="advice"
+					role="button">PORADŹ SIĘ TERAZ</a>
 			</p>
 		</div>
 	</div>
@@ -100,8 +111,8 @@
 			zawodzie, znających wszystkie możliwe rozwiązania na napotkane
 			ewentualnie trudności. Posiadamy bogatą bazę porad, a poprzez jej
 			ciągłą aktualizację, wiedzę niezbędną do prowadzenia serwisu.</p>
-		<p class="text-muted">Porady, które Państwu proponujemy, są redagowane przez naszych
-			Prawników z kilkuletnim doświadczeniem.</p>
+		<p class="text-muted">Porady, które Państwu proponujemy, są
+			redagowane przez naszych Prawników z kilkuletnim doświadczeniem.</p>
 	</div>
 	<!-- /Intro-->
 
@@ -109,7 +120,7 @@
 	<div class="jumbotron top-space">
 		<div class="container">
 
-			<h3 class="text-center thin">Reasons to use this template</h3>
+			<h3 class="text-center thin">Dlaczego warto skorzystać z naszych usług</h3>
 
 			<div class="row">
 				<div class="col-md-3 col-sm-6 highlight">
@@ -174,7 +185,7 @@
 	<!-- container -->
 	<div class="container">
 
-		<h2 class="text-center top-space">Frequently Asked Questions</h2>
+		<h2 class="text-center top-space">Najczęściej zadawane pytania</h2>
 		<br>
 
 		<div class="row">

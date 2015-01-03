@@ -59,12 +59,22 @@
 						</ul></li>
 					<li><a href="contact">Kontakt</a></li>
 					<sec:authorize access="!isAuthenticated()">
-					<li><a class="btn" href="signin">Rejestracja / Logowanie</a></li>
+						<li><a class="btn" href="signin">Rejestracja / Logowanie</a></li>
 					</sec:authorize>
-										<li><sec:authorize access="isAuthenticated()"><p style="color:white;">Witaj, <sec:authentication
-								property="principal.username" /></p>
+					<sec:authorize access="isAuthenticated()">
+						<li style="color: white;">
+							<button class="btn btn-disabled">
+								Witaj
+								<sec:authentication property="principal.username" />
+								!
+							</button>
+						</li>
+						<li><a class="btn btn-action" style="color: white"
+							href="<c:url value="/j_spring_security_logout" />">Wyloguj</a></li>
+					</sec:authorize>
+					<li><sec:authorize access="hasRole('ROLE_ADMIN')">
 							<a class="btn btn-action" style="color: white"
-								href="<c:url value="/j_spring_security_logout" />">Wyloguj</a>
+								href="<c:url value="/admin/" />">Panel Administracyjny</a>
 						</sec:authorize></li>
 				</ul>
 			</div>
@@ -122,11 +132,10 @@
 			<!-- Article main content -->
 			<article class="col-md-8 maincontent"> <header
 				class="page-header"> <c:if test="${not empty success}">
-			<div class="msg-log">${success}</div>
-		</c:if>
-		<c:if test="${not empty fail or failed == true}">
-			<div class="error-log">${fail}</div>
-		</c:if>
+				<div class="msg-log">${success}</div>
+			</c:if> <c:if test="${not empty fail or failed == true}">
+				<div class="error-log">${fail}</div>
+			</c:if>
 			<h1 class="page-title">Wypełnij ponizszy formularz w celu
 				uzyskania porady.</h1>
 			</header>
@@ -137,7 +146,8 @@
 				<p>Tutaj dodaj dokumenty ktore beda niezbędne do analizy.</p>
 
 				<p>
-					<span style="font-size: 10.0 em" class="glyphicon glyphicon-circle-arrow-down"></span>
+					<span style="font-size: 10.0 em"
+						class="glyphicon glyphicon-circle-arrow-down"></span>
 				</p>
 				<p>
 					<span class="btn btn-default btn-file"> <input type="file"
@@ -145,7 +155,8 @@
 					</span>
 				</p>
 				<p>
-				<span style="font-size: 10.0 em" class="glyphicon glyphicon-circle-arrow-down"></span>
+					<span style="font-size: 10.0 em"
+						class="glyphicon glyphicon-circle-arrow-down"></span>
 				</p>
 				<p>
 					<button type="submit" class="btn btn-default">Zatwierdz</button>

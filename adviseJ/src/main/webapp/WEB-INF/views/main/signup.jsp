@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -57,15 +58,26 @@
 							<li><a href="sidebar-right">Right Sidebar</a></li>
 						</ul></li>
 					<li><a href="contact">Kontakt</a></li>
-					<li class="active"><a class="btn" href="signin">Rejestracja / Logowanie</a></li>
+					<sec:authorize access="!isAuthenticated()">
+						<li><a class="btn" href="signin">Rejestracja / Logowanie</a></li>
+					</sec:authorize>
+					<sec:authorize access="isAuthenticated()">
+						<li style="color: white;">
+							<button class="btn btn-disabled">
+								Witaj
+								<sec:authentication property="principal.username" />
+								!
+							</button>
+						</li>
+						<li><a class="btn btn-action" style="color: white"
+							href="<c:url value="/j_spring_security_logout" />">Wyloguj</a></li>
+					</sec:authorize>
+					<li><sec:authorize access="hasRole('ROLE_ADMIN')">
+							<a class="btn btn-action" style="color: white"
+								href="<c:url value="/admin/" />">Panel Administracyjny</a>
+						</sec:authorize></li>
 				</ul>
 			</div>
-			<!--/.nav-collapse -->
-								<li><sec:authorize access="isAuthenticated()"><p style="color:white;">Witaj, <sec:authentication
-								property="principal.username" /></p>
-							<a class="btn btn-action" style="color: white"
-								href="<c:url value="/j_spring_security_logout" />">Wyloguj</a>
-						</sec:authorize></li>
 		</div>
 	</div>
 	<!-- /.navbar -->
@@ -108,27 +120,29 @@
 
 						<form action="signup" method="POST">
 							<div class="top-margin">
-								<label>Imie</label> <input type="text" required="required" name="firstName"
-									class="form-control">
+								<label>Imie</label> <input type="text" required="required"
+									name="firstName" class="form-control">
 							</div>
 							<div class="top-margin">
-								<label>Nazwisko</label> <input type="text" required="required" name="lastName"
-									class="form-control">
+								<label>Nazwisko</label> <input type="text" required="required"
+									name="lastName" class="form-control">
 							</div>
 							<div class="top-margin">
 								<label>Adres Email <span class="text-danger">*</span></label> <input
-									type="text" required="required" name="email" class="form-control">
+									type="text" required="required" name="email"
+									class="form-control">
 							</div>
 
 							<div class="row top-margin">
 								<div class="col-sm-6">
 									<label>Hasło <span class="text-danger">*</span></label> <input
-										type="password" required="required" name="password" class="form-control">
+										type="password" required="required" name="password"
+										class="form-control">
 								</div>
 								<div class="col-sm-6">
 									<label>Powtórz Hasło <span class="text-danger">*</span></label>
-									<input type="password" required="required" name="confirmPassword"
-										class="form-control">
+									<input type="password" required="required"
+										name="confirmPassword" class="form-control">
 								</div>
 							</div>
 
@@ -136,8 +150,9 @@
 
 							<div class="row">
 								<div class="col-lg-8">
-									<label class="checkbox"> <input type="checkbox" required="required" name="enabled">
-										Zapoznałem się z <a href="page_terms">Regulaminem</a>
+									<label class="checkbox"> <input type="checkbox"
+										required="required" name="enabled"> Zapoznałem się z <a
+										href="page_terms">Regulaminem</a>
 									</label>
 								</div>
 								<div class="col-lg-4 text-right">
@@ -166,13 +181,12 @@
 
 				<div class="col-md-3 widget">
 					<h3 class="widget-title">Kontakt</h3>
-						<div class="widget-body">
-							<p>+48 605052247<br>
-								<a href="mailto:#">paykitson@gmail.com</a><br>
-								<br>
-								Jana Pawla II, Gliwice, 44-100
-							</p>	
-						</div>
+					<div class="widget-body">
+						<p>
+							+48 605052247<br> <a href="mailto:#">paykitson@gmail.com</a><br>
+							<br> Jana Pawla II, Gliwice, 44-100
+						</p>
+					</div>
 				</div>
 
 				<div class="col-md-3 widget">

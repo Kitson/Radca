@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pl">
@@ -57,11 +58,26 @@
 							<li><a href="sidebar-right">Right Sidebar</a></li>
 						</ul></li>
 					<li><a href="contact">Kontakt</a></li>
-					<li class="active"><a class="btn" href="signin">Rejestracja / Logowanie</a></li>
+					<sec:authorize access="!isAuthenticated()">
+						<li><a class="btn" href="signin">Rejestracja / Logowanie</a></li>
+					</sec:authorize>
+					<sec:authorize access="isAuthenticated()">
+						<li style="color: white;">
+							<button class="btn btn-disabled">
+								Witaj
+								<sec:authentication property="principal.username" />
+								!
+							</button>
+						</li>
+						<li><a class="btn btn-action" style="color: white"
+							href="<c:url value="/j_spring_security_logout" />">Wyloguj</a></li>
+					</sec:authorize>
+					<li><sec:authorize access="hasRole('ROLE_ADMIN')">
+							<a class="btn btn-action" style="color: white"
+								href="<c:url value="/admin/" />">Panel Administracyjny</a>
+						</sec:authorize></li>
 				</ul>
 			</div>
-			<!--/.nav-collapse -->
-			<sec:authorize access="isAuthenticated()"><h1>Witaj, <sec:authentication property="principal.username" /></h1><a href="<c:url value="/j_spring_security_logout" />" > Logout</a></sec:authorize>
 		</div>
 	</div>
 	<!-- /.navbar -->
@@ -86,29 +102,33 @@
 
 			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 				<c:if test="${not empty error}">
-							<div class="error-log">${error}</div>
-						</c:if>
-						<c:if test="${not empty msg}">
-							<div class="msg-log">${msg}</div>
-						</c:if>
+					<div class="error-log">${error}</div>
+				</c:if>
+				<c:if test="${not empty msg}">
+					<div class="msg-log">${msg}</div>
+				</c:if>
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<h3 class="thin text-center">Zaloguj sie na swoje konto</h3>
 						<p class="text-center text-muted">
-							Jesli nie posiadasz jeszcze konta w naszym serwisie, <a href="signup">Zarejestruj się</a>
-							W innym wypadku podaj poprawne dane do logowania.
+							Jesli nie posiadasz jeszcze konta w naszym serwisie, <a
+								href="signup">Zarejestruj się</a> W innym wypadku podaj poprawne
+							dane do logowania.
 						</p>
 						<hr>
 
 						<form name='loginForm' role="form"
-							action="<c:url value='../j_spring_security_check' />" method='POST'>
+							action="<c:url value='../j_spring_security_check' />"
+							method='POST'>
 							<div class="top-margin">
 								<label>Imie i Nazwisko <span class="text-danger">*</span></label>
-								<input type="text" required="required" name="username" class="form-control">
+								<input type="text" required="required" name="username"
+									class="form-control">
 							</div>
 							<div class="top-margin">
 								<label>Hasło <span class="text-danger">*</span></label> <input
-									type="password" required="required" name="password" class="form-control">
+									type="password" required="required" name="password"
+									class="form-control">
 							</div>
 
 							<hr>
@@ -145,13 +165,12 @@
 
 				<div class="col-md-3 widget">
 					<h3 class="widget-title">Kontakt</h3>
-						<div class="widget-body">
-							<p>+48 605052247<br>
-								<a href="mailto:#">paykitson@gmail.com</a><br>
-								<br>
-								Jana Pawla II, Gliwice, 44-100
-							</p>	
-						</div>
+					<div class="widget-body">
+						<p>
+							+48 605052247<br> <a href="mailto:#">paykitson@gmail.com</a><br>
+							<br> Jana Pawla II, Gliwice, 44-100
+						</p>
+					</div>
 				</div>
 
 				<div class="col-md-3 widget">

@@ -12,7 +12,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Grayscale - Start Bootstrap Theme</title>
+<title>iRadca - Porady prawne</title>
 
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet"
@@ -91,7 +91,7 @@
 	<section id="about" class="container content-section text-center">
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
-			<h2>O Radcy Jakubie</h2>
+			<h2>O Nas</h2>
 			<p>Znajdziesz tutaj bezpłatne porady prawne.</p>
 			<p>Aby móc otrzymać wycenę oraz brać udział w dyskusjach, musisz
 				się zarejestrować. Rejestracja na portalu jest darmowa.</p>
@@ -118,9 +118,9 @@
 	<section id="contact" class="container content-section text-center">
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
-			<h2>Contact with Radca Jakup</h2>
+			<h2>Kontakt</h2>
 			<p>Jesli chcesz wiedzieć więcej o którymś z naszych produktów, proszę napisz na podany adres email lub skorzystaj z formularza.</p>
-			<p>feedback@RadcaJakup.com</p>
+			<p>feedback@iradca.com</p>
 			<a href="main/home"><img id="judge" alt="Porada prawna"
 				src="resources/images/judge.png" width="126" height="126"></a>
 			<p>
@@ -144,7 +144,7 @@
 
 	<footer>
 	<div class="container text-center">
-		<p>Copyright &copy; Your Website 2014</p>
+		<p>Copyright &copy; iradca.com 2014</p>
 		<div class="fb-like"
 			data-href="https://developers.facebook.com/docs/plugins/"
 			data-layout="button_count" data-action="like" data-show-faces="true"

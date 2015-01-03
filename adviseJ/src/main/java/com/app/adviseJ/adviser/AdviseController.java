@@ -6,6 +6,8 @@ import java.io.FileOutputStream;
 import java.security.Principal;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,12 +48,15 @@ public class AdviseController {
 	@RequestMapping(value = "/main/advice", method = RequestMethod.POST)
 	public ModelAndView handleFileUpload(
 			@RequestParam("message") String message,
-			@RequestParam("file") MultipartFile file) {
+			@RequestParam("file") MultipartFile file,HttpServletRequest request,
+            HttpServletResponse response) {
 		if (!file.isEmpty()) {
 			try {
-				String rootPath = System.getProperty("catalina.home");
-				File dir = new File(rootPath + File.separator + "tmpFiles");
-                System.out.println(rootPath);
+				  String appPath = request.getContextPath();
+			        System.out.println("appPath = " + appPath);
+			        // construct the complete absolute path of the file
+			        String fullPath = appPath; 
+				File dir = new File(appPath + File.separator + "files");
                 System.out.println(dir);
                 if (!dir.exists())
                     dir.mkdirs();
@@ -69,7 +74,7 @@ public class AdviseController {
 				Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 			      String username = auth.getName();
 			      System.out.println(serverFile.getName());
-				Message message1 = new Message(serverFile.getAbsolutePath(),message,username); 
+				Message message1 = new Message(message,serverFile.getName(),username);
 				messageDao.insertMessage(message1);
 				return new ModelAndView("redirect:/main/advice?success=true");
 			} catch (Exception e) {

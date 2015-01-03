@@ -34,18 +34,10 @@ public class MessageDaoImpl implements MessageDao {
         session.close();
 	}
 	@SuppressWarnings("unchecked")
-	public ArrayList<Message> getMessages(){
-		ArrayList <Message> messageList;
+	public List<Message> getMessages(){
 		Session session = sessionFactory.openSession();
         session.beginTransaction();
-        messageList = (ArrayList<Message>) session.createCriteria(Message.class).list();
-        session.getTransaction().commit();
-        session.close();
-        for(Message message:messageList)
-        {
-        	System.out.println(message.getAuthor());
-        }
-        return messageList;
+        return session.createCriteria(Message.class).list();
 	}
 
 }

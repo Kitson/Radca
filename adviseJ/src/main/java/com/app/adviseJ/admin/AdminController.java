@@ -1,6 +1,7 @@
 package com.app.adviseJ.admin;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,11 +19,18 @@ import com.app.adviseJ.message.model.Message;
 public class AdminController {
 	@Autowired
 	private MessageDao messageDao;
+	@RequestMapping(value="/",method = RequestMethod.GET)
+	public ModelAndView main()
+	{
+		ModelAndView model =  new ModelAndView("admin/main");
+		return model;
+			
+	}
 	@RequestMapping(value="messages",method = RequestMethod.GET)
 	public ModelAndView getMessage()
 	{
 		ModelAndView model =  new ModelAndView("admin/messages");
-		ArrayList <Message> messageList = messageDao.getMessages();
+		List <Message> messageList = messageDao.getMessages();
 		model.addObject("messageList",messageList);
 		return model;
 			

@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="Jonasz Kitowski">
 
-<title>O nas - Darmowe Porady Prawne</title>
+<title>Panel Administracyjny</title>
 
 <link rel="shortcut icon" href="../resources/images/gt_favicon.png">
 
@@ -43,20 +43,20 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="home"><img
+				<a class="navbar-brand" href="/adviseJ/main/home"><img
 					src="../resources/images/logo.png" alt="Progressus HTML5 template"></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a href="home">Strona Główna</a></li>
-					<li class="active"><a href="about">O nas</a></li>
+					<li><a href="/adviseJ/main/home">Strona Główna</a></li>
+					<li><a href="/adviseJ/main/about">O nas</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">Wiecej Stron <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="advice">Porada</a></li>
-							<li><a href="sidebar-right">Right Sidebar</a></li>
+							<li><a href="/adviseJ/main/advice">Porada</a></li>
+							<li><a href="/adviseJ/main/sidebar-right">Right Sidebar</a></li>
 						</ul></li>
-					<li><a href="contact">Kontakt</a></li>
+					<li><a href="/adviseJ/main/contact">Kontakt</a></li>
 					<sec:authorize access="!isAuthenticated()">
 						<li><a class="btn" href="signin">Rejestracja / Logowanie</a></li>
 					</sec:authorize>
@@ -71,11 +71,6 @@
 						<li><a class="btn btn-action" style="color: white"
 							href="<c:url value="/j_spring_security_logout" />">Wyloguj</a></li>
 					</sec:authorize>
-
-					<li><sec:authorize access="hasRole('ROLE_ADMIN')">
-							<a class="btn btn-action" style="color: white"
-								href="<c:url value="/admin/" />">Panel Administracyjny</a>
-						</sec:authorize></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -89,90 +84,51 @@
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li><a href="home">Strona Główna</a></li>
-			<li class="active">O nas</li>
+			<li class="active"><a href="/adviseJ/admin/">Panel
+					Administracyjny</a></li>
 		</ol>
 
 		<div class="row">
 
 			<!-- Article main content -->
-			<article class="col-sm-8 maincontent"> <header
+			<article class="col-xs-12 maincontent"> <header
 				class="page-header">
-			<h1 class="page-title">O nas</h1>
+			<h1 class="page-title">Panel Administracyjny</h1>
 			</header>
-			<h3>Lorem ipsum</h3>
-			<p>
-				<img src="../resources/images/mac.jpg" alt=""
-					class="img-rounded pull-right" width="300"> Lorem ipsum
-				dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur
-				eius repellendus eos aliquid molestiae ea laborum ex quibusdam
-				laudantium voluptates placeat consectetur quam aliquam beatae soluta
-				accusantium iusto nihil nesciunt unde veniam magnam repudiandae
-				sapiente.
-			</p>
-			<p>Quos, aliquam nam velit impedit minus tenetur beatae voluptas
-				facere sint pariatur! Voluptatibus, quisquam, error, est assumenda
-				corporis inventore illo nesciunt iure aut dolor possimus repellat
-				minima veniam alias eius!</p>
-			<h3>Necessitatibus</h3>
-			<p>Velit, odit, eius, libero unde impedit quaerat dolorem
-				assumenda alias consequuntur optio quae maiores ratione tempore sit
-				aliquid architecto eligendi pariatur ab soluta doloremque dicta
-				aspernatur labore quibusdam dolore corrupti quod inventore. Maiores,
-				repellat, consequuntur eius repellendus eos aliquid molestiae ea
-				laborum ex quibusdam laudantium voluptates placeat consectetur quam
-				aliquam!</p>
-			<h3>Fugit, laboriosam</h3>
-			<p>Eum, quasi, est, vitae, ipsam nobis consectetur ea aspernatur
-				ad eos voluptatibus fugiat nisi perferendis impedit. Quam, nulla,
-				excepturi, voluptate minus illo tenetur sint ab in culpa cumque
-				impedit quibusdam. Saepe, molestias quia voluptatem natus velit
-				fugiat omnis rem eos sapiente quasi quaerat aspernatur quisquam
-				deleniti accusantium laboriosam odio id?</p>
-			<h3>Doloribus, illo ipsum</h3>
-			<p>Velit, odit, eius, libero unde impedit quaerat dolorem
-				assumenda alias consequuntur optio quae maiores ratione tempore sit
-				aliquid architecto eligendi pariatur ab soluta doloremque dicta
-				aspernatur labore quibusdam dolore corrupti quod inventore. Maiores,
-				repellat, consequuntur eius repellendus eos aliquid molestiae ea
-				laborum ex quibusdam laudantium voluptates placeat consectetur quam
-				aliquam!</p>
-			<p>Eum, quasi, est, vitae, ipsam nobis consectetur ea aspernatur
-				ad eos voluptatibus fugiat nisi perferendis impedit. Quam, nulla,
-				excepturi, voluptate minus illo tenetur sint ab in culpa cumque
-				impedit quibusdam. Saepe, molestias quia voluptatem natus velit
-				fugiat omnis rem eos sapiente quasi quaerat aspernatur quisquam
-				deleniti accusantium laboriosam odio id?</p>
-
+			<div class="row">
+				<div class="col-md-3">
+					<a href="messages"><img alt="Wiadomości"
+						src="../resources/images/message-icon.png"></a>
+				</div>
+				<div class="col-md-3">
+					<a href="settings"><img alt="Ustawienia"
+						src="../resources/images/settings-icon.png"></a>
+				</div>
+				<div class="col-md-3">
+					<a href="messages"><img alt="Wiadomości"
+						src="../resources/images/message-icon.png"></a>
+				</div>
+				<div class="col-md-3">
+					<a href="settings"><img alt="Ustawienia"
+						src="../resources/images/settings-icon.png"></a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<h1>Wiadomości</h1>
+				</div>
+				<div class="col-md-3">
+					<h1>Ustawienia</h1>
+				</div>
+				<div class="col-md-3">
+					<h1>Wiadomości</h1>
+				</div>
+				<div class="col-md-3">
+					<h1>Ustawienia</h1>
+				</div>
+			</div>
 			</article>
 			<!-- /Article -->
-
-			<!-- Sidebar -->
-			<aside class="col-sm-4 sidebar sidebar-right">
-
-			<div class="widget">
-				<h4>Vacancies</h4>
-				<ul class="list-unstyled list-spaces">
-					<li><a href="">Lorem ipsum dolor</a><br>
-					<span class="small text-muted">Lorem ipsum dolor sit amet,
-							consectetur adipisicing elit. Animi, laborum.</span></li>
-					<li><a href="">Totam, libero, quis</a><br>
-					<span class="small text-muted">Suscipit veniam debitis sed
-							ipsam quia magnam eveniet perferendis nisi.</span></li>
-					<li><a href="">Enim, sequi dignissimos</a><br>
-					<span class="small text-muted">Reprehenderit illum quod unde
-							quo vero ab inventore alias veritatis.</span></li>
-					<li><a href="">Suscipit, consequatur, aut</a><br>
-					<span class="small text-muted">Sed, mollitia earum debitis
-							est itaque esse reiciendis amet cupiditate.</span></li>
-					<li><a href="">Nam, illo, veritatis</a><br>
-					<span class="small text-muted">Delectus, sapiente illo
-							provident quo aliquam nihil beatae dignissimos itaque.</span></li>
-				</ul>
-			</div>
-
-			</aside>
-			<!-- /Sidebar -->
 
 		</div>
 	</div>
@@ -196,7 +152,7 @@
 				</div>
 
 				<div class="col-md-3 widget">
-					<h3 class="widget-title">Follow me</h3>
+					<h3 class="widget-title">Dołącz do nas</h3>
 					<div class="widget-body">
 						<p class="follow-me-icons clearfix">
 							<a href=""><i class="fa fa-twitter fa-2"></i></a> <a href=""><i
@@ -235,9 +191,11 @@
 				<div class="col-md-6 widget">
 					<div class="widget-body">
 						<p class="simplenav">
-							<a href="#">Strona Główna</a> | <a href="about">O nas</a> | <a
-								href="sidebar-right">Sidebar</a> | <a href="contact">Kontakt</a>
-							| <b><a href="signup">Rejestracja</a></b>
+							<a href="/adviseJ/main/home">Strona Główna</a> | <a
+								href="/adviseJ/main/about">O nas</a> | <a
+								href="/adviseJ/main/sidebar-right">Sidebar</a> | <a
+								href="/adviseJ/main/contact">Kontakt</a> | <b><a
+								href="/adviseJ/main/signup">Rejestracja</a></b>
 						</p>
 					</div>
 				</div>
@@ -245,7 +203,7 @@
 				<div class="col-md-6 widget">
 					<div class="widget-body">
 						<p class="text-right">
-							Copyright &copy; 2014, Your name. Designed by <a
+							Copyright &copy; 2014, Jonasz Kitowski. Designed by <a
 								href="http://gettemplate.com/" rel="designer">gettemplate</a>
 						</p>
 					</div>

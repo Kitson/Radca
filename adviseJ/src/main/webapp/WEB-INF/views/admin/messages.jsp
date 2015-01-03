@@ -36,22 +36,34 @@
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-				<a class="navbar-brand" href="home"><img src="../resources/images/logo.png" alt="Progressus HTML5 template"></a>
+				<a class="navbar-brand" href="/adviseJ/main/home"><img src="../resources/images/logo.png" alt="Progressus HTML5 template"></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a href="home">Strona Główna</a></li>
-					<li><a href="about">O nas</a></li>
+					<li><a href="/adviseJ/main/home">Strona Główna</a></li>
+					<li><a href="/adviseJ/main/about">O nas</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Wiecej Stron <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="advice">Porada</a></li>
-							<li><a href="sidebar-right">Right Sidebar</a></li>
+							<li><a href="/adviseJ/main/advice">Porada</a></li>
+							<li><a href="/adviseJ/main/sidebar-right">Right Sidebar</a></li>
 						</ul>
 					</li>
-					<li class="active"><a href="contact">Kontakt</a></li>
-					<sec:authorize access="!isAuthenticated()"><li><a class="btn" href="signin">Rejestracja / Logowanie</a></li></sec:authorize>
-					<li><sec:authorize access="isAuthenticated()">Witaj, <sec:authentication property="principal.username" /><a class="btn" href="<c:url value="/j_spring_security_logout" />" >Wyloguj</a></sec:authorize></li>
+					<li><a href="/adviseJ/main/contact">Kontakt</a></li>
+					<sec:authorize access="!isAuthenticated()">
+						<li><a class="btn" href="signin">Rejestracja / Logowanie</a></li>
+					</sec:authorize>
+					<sec:authorize access="isAuthenticated()">
+						<li style="color: white;">
+							<button class="btn btn-disabled">
+								Witaj
+								<sec:authentication property="principal.username" />
+								!
+							</button>
+						</li>
+						<li><a class="btn btn-action" style="color: white"
+							href="<c:url value="/j_spring_security_logout" />">Wyloguj</a></li>
+					</sec:authorize>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -64,8 +76,8 @@
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li><a href="home">Strona Główna</a></li>
-			<li class="active">O nas</li>
+			<li><a href="/adviseJ/admin/">Panel Administracyjny</a></li>
+			<li class="active"><a href="/adviseJ/admin/messages/">Wiadomości</a></li>
 		</ol>
 
 		<div class="row">
@@ -76,16 +88,23 @@
 			<h1 class="page-title">Wiadomośći</h1>
 			</header>
 				<div class="panel panel-default">
-	<c:forEach var="item" items="${messageList}">
-	<div class="panel panel-default">
-		<p>${item.author}</p>
-		<p>${item.filePath}</p>
-		<p>${item.message}</p>
+  <div class="panel-heading">
+    <h3 class="panel-title">Wiadomości</h3>
+  </div>	
+  <div class="panel-body">
+    <c:forEach var="item" items="${messageList}">
+    <div class="thumbnail">
+		<h3>Autor:</h3>
+		${item.author}
+		<h3>Załączniki:</h3>
+		${item.filePath}
+		<a href="messages/<c:out value='${item.filePath}'></c:out>/" type="button"  class="btn btn-default">Pobierz plik</a>
+		<h3>Wiadomość:</h3>
+		${item.message}
 		</div>
 	</c:forEach>
+  </div>
 </div>
-
-			</div>
 
 			</article>
 			<!-- /Article -->
@@ -152,9 +171,9 @@
 				<div class="col-md-6 widget">
 					<div class="widget-body">
 						<p class="simplenav">
-							<a href="#">Strona Główna</a> | <a href="about">O nas</a> | <a
-								href="sidebar-right">Sidebar</a> | <a href="contact">Kontakt</a>
-							| <b><a href="signup">Rejestracja</a></b>
+							<a href="/adviseJ/main/home">Strona Główna</a> | <a href="/adviseJ/main/about">O nas</a> | <a
+								href="/adviseJ/main/sidebar-right">Sidebar</a> | <a href="/adviseJ/main/contact">Kontakt</a>
+							| <b><a href="/adviseJ/main/signup">Rejestracja</a></b>
 						</p>
 					</div>
 				</div>

@@ -60,10 +60,20 @@
 					<sec:authorize access="!isAuthenticated()">
 						<li><a class="btn" href="signin">Rejestracja / Logowanie</a></li>
 					</sec:authorize>
-					<li><sec:authorize access="isAuthenticated()"><p style="color:white;">Witaj, <sec:authentication
-								property="principal.username" /></p>
+					<sec:authorize access="isAuthenticated()">
+						<li style="color: white;">
+							<button class="btn btn-disabled">
+								Witaj
+								<sec:authentication property="principal.username" />
+								!
+							</button>
+						</li>
+						<li><a class="btn btn-action" style="color: white"
+							href="<c:url value="/j_spring_security_logout" />">Wyloguj</a></li>
+					</sec:authorize>
+					<li><sec:authorize access="hasRole('ROLE_ADMIN')">
 							<a class="btn btn-action" style="color: white"
-								href="<c:url value="/j_spring_security_logout" />">Wyloguj</a>
+								href="<c:url value="/admin/" />">Panel Administracyjny</a>
 						</sec:authorize></li>
 				</ul>
 			</div>

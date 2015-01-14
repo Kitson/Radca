@@ -4,10 +4,17 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +32,7 @@ import com.app.adviseJ.message.dao.MessageDao;
 import com.app.adviseJ.message.dao.MessageDaoImpl;
 import com.app.adviseJ.message.model.Message;
 import com.app.adviseJ.users.dao.UserDao;
+import com.app.adviseJ.users.model.User;
 
 @Controller
 public class AdviseController {
@@ -49,10 +57,11 @@ public class AdviseController {
 	public ModelAndView handleFileUpload(
 			@RequestParam("message") String message,
 			@RequestParam("file") MultipartFile file,HttpServletRequest request,
-            HttpServletResponse response) {
+            HttpServletResponse response,ModelAndView model) {
 		if (!file.isEmpty()) {
 			try {
-				  String appPath = request.getContextPath();
+				List<String> errors = new ArrayList<String>();
+				String appPath = request.getContextPath();
 			        System.out.println("appPath = " + appPath);
 			        // construct the complete absolute path of the file
 			        String fullPath = appPath; 
@@ -75,11 +84,25 @@ public class AdviseController {
 			      String username = auth.getName();
 			      System.out.println(serverFile.getName());
 				Message message1 = new Message(message,serverFile.getName(),username);
+				ValidatorFactory validatorFactory = Validation
+						.buildDefaultValidatorFactory();
+				Validator validator = validatorFactory.getValidator();
+				Set<ConstraintViolation<Message>> validationErrors = validator.validate(message1);
+				if (!validationErrors.isEmpty()) {
+					for (ConstraintViolation<Message> error : validationErrors) {
+						errors.add(error.getMessage());
+					}
+					model.setViewName("redirect:/main/advice?failed=true");
+					model.addObject("errors", errors);
+					return model;
+				}
 				messageDao.insertMessage(message1);
-				return new ModelAndView("redirect:/main/advice?success=true");
+				model.setViewName("redirect:/main/advice?success=true");
+				return model;
 			} catch (Exception e) {
 				System.out.println("Blad: "+e.getMessage());
-				return new ModelAndView("redirect:/main/advice?failed=true");
+				model.setViewName("redirect:/main/advice?failed=true");
+				return model;
 			}
 		} else {
 			return new ModelAndView("redirect:/main/advice?failed=true");

@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="Jonasz Kitowski">
 
-<title>Porada - Darmowe Porady Prawne</title>
+<title>Panel Administracyjny - Wiadomośći</title>
 
 <link rel="shortcut icon" href="../resources/images/gt_favicon.png">
 
@@ -19,8 +19,7 @@
 	href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
 <link rel="stylesheet" href="../resources/css/font-awesome.min.css">
-<link rel="stylesheet" media="screen"
-	href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.svg">
+
 <!-- Custom styles for our template -->
 <link rel="stylesheet" href="../resources/css/bootstrap-theme.css"
 	media="screen">
@@ -28,8 +27,8 @@
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
-	<script src="../resources/js/html5shiv.js"></script>
-	<script src="../resources/js/respond.min.js"></script>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
 </head>
 
@@ -44,20 +43,20 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="home"><img
+				<a class="navbar-brand" href="/adviseJ/main/home"><img
 					src="../resources/images/logo.png" alt="Progressus HTML5 template"></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a href="home">Strona Główna</a></li>
-					<li><a href="about">O nas</a></li>
+					<li><a href="/adviseJ/main/home">Strona Główna</a></li>
+					<li><a href="/adviseJ/main/about">O nas</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">Wiecej Stron <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li class="active"><a href="advice">Porada</a></li>
-							<li><a href="sidebar-right">Right Sidebar</a></li>
+							<li><a href="/adviseJ/main/advice">Porada</a></li>
+							<li><a href="/adviseJ/main/sidebar-right">Right Sidebar</a></li>
 						</ul></li>
-					<li><a href="contact">Kontakt</a></li>
+					<li><a href="/adviseJ/main/contact">Kontakt</a></li>
 					<sec:authorize access="!isAuthenticated()">
 						<li><a class="btn" href="signin">Rejestracja / Logowanie</a></li>
 					</sec:authorize>
@@ -72,10 +71,6 @@
 						<li><a class="btn btn-action" style="color: white"
 							href="<c:url value="/j_spring_security_logout" />">Wyloguj</a></li>
 					</sec:authorize>
-					<li><sec:authorize access="hasRole('ROLE_ADMIN')">
-							<a class="btn btn-action" style="color: white"
-								href="<c:url value="/admin/" />">Panel Administracyjny</a>
-						</sec:authorize></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -89,90 +84,68 @@
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li><a href="home">Strona Główna</a></li>
-			<li class="active">Porada</li>
+			<li><a href="/adviseJ/admin/">Panel Administracyjny</a></li>
+			<li class="active"><a href="/adviseJ/admin/article	">Dodaj
+					Artykuł</a></li>
 		</ol>
 
 		<div class="row">
 
-			<!-- Sidebar -->
-			<aside class="col-md-4 sidebar sidebar-left">
-
-			<div class="row widget">
-				<div class="col-xs-12">
-					<h4>Lorem ipsum dolor sit</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-						Facere, ratione delectus reiciendis nulla nisi pariatur molestias
-						animi eos repellat? Vel.</p>
-				</div>
-			</div>
-			<div class="row widget">
-				<div class="col-xs-12">
-					<h4>Lorem ipsum dolor sit</h4>
-					<p>
-						<img src="../resources/images/1.jpg" alt="">
-					</p>
-				</div>
-			</div>
-			<div class="row widget">
-				<div class="col-xs-12">
-					<h4>Lorem ipsum dolor sit</h4>
-					<p>
-						<img src="../resources/images/2.jpg" alt="">
-					</p>
-					<p>Qui, debitis, ad, neque reprehenderit laborum soluta dolor
-						voluptate eligendi enim consequuntur eveniet recusandae rerum?
-						Atque eos corporis provident tenetur.</p>
-				</div>
-			</div>
-
-			</aside>
-			<!-- /Sidebar -->
-
 			<!-- Article main content -->
-			<article class="col-md-8 maincontent"> <header
-				class="page-header"> <c:if test="${not empty success}">
-				<div class="msg-log">${success}</div>
-			</c:if> <c:if test="${not empty fail or failed == true}">
-				<div class="error-log">
-					<p>${fail}</p>
-					<c:if test="${not empty errors}">
-						<div class="error-log">
-							<c:forEach items="${errors}" var="error">
-								<p>
-									<c:out value="${error}" />
-								</p>
-							</c:forEach>
-						</div>
-					</c:if>
-				</div>
-			</c:if>
-			<h1 class="page-title">Wypełnij ponizszy formularz w celu
-				uzyskania porady.</h1>
+			<article class="col-xs-12 maincontent"> <header
+				class="page-header">
+			<h1 class="page-title">Artykuł</h1>
 			</header>
-			<form method="post" enctype="multipart/form-data" action="advice">
-				<p>Tutaj opisz czego dotyczy problem.</p>
-				<textarea name="message" id="message" class="form-control" rows="9"
-					cols="25" required="required" placeholder="Wiadomość"></textarea>
-				<p>Tutaj dodaj dokumenty ktore beda niezbędne do analizy.</p>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Dodaj Artykuł</h3>
+				</div>
+				<div class="panel-body">
+					<form action="article" method="POST">
+						<div class="top-margin">
+							<div class="top-margin">
+								<p>
+									<label>Tytuł</label> <input type="text" required="required"
+										name="title" class="form-control">
+								</p>
+							</div>
+							<div class="top-margin">
+								<p>
+									<label>Treść</label>
+									<textarea rows="20" cols="50" type="textarea"
+										required="required" name="article_text" class="form-control"
+										></textarea>
+								</p>
+							</div>
+							<div class="top-margin">
+								<p>
+								<label>Kategoria</label>
+									<select class="form-control" name="category">
+										<option value="Prawo konstytucyjne">Prawo konstytucyjne</option>
+										<option value="Prawo cywilne">Prawo cywilne</option>
+										<option value="Prawo pracy">Prawo pracy</option>
+										<option value="Prawo karne">Prawo karne</option>
+										<option value="Prawo administracyjne">Prawo administracyjne</option>
+										<option value="Prawo rodzinne i opiekuńcze">Prawo rodzinne i opiekuńcze</option>
+										<option value="Prawo finansowe">Prawo finansowe</option>
+									</select>
+								</p>
+							</div>
+						</div>
 
-				<p>
-					<span style="font-size: 10.0 em"
-						class="glyphicon glyphicon-circle-arrow-down"></span>
-				</p>
-				<p>
-					<span class="btn btn-default btn-file"> <input type="file"
-						name="file" class="form-control" placeholder="pliki" multiple></input>
-					</span>
-				</p>
-				<p>
-					<span style="font-size: 10.0 em"
-						class="glyphicon glyphicon-circle-arrow-down"></span>
-				</p>
-				<p>
-					<button type="submit" class="btn btn-default">Zatwierdz</button>
-				</p>
-			</form>
+						<hr>
+
+						<div class="row">
+							<div class="col-lg-4">
+								<p>
+									<button class="btn btn-action" type="submit">Dodaj Artykuł</button>
+								</p>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
 			</article>
 			<!-- /Article -->
 
@@ -191,8 +164,8 @@
 					<h3 class="widget-title">Kontakt</h3>
 					<div class="widget-body">
 						<p>
-							+234 23 9873237<br> <a href="mailto:#">some.email@somewhere.com</a><br>
-							<br> 234 Hidden Pond Road, Ashland City, TN 37015
+							+48 605052247<br> <a href="mailto:#">paykitson@gmail.com</a><br>
+							<br> Jana Pawla II, Gliwice, 44-100
 						</p>
 					</div>
 				</div>
@@ -200,7 +173,7 @@
 				<div class="col-md-3 widget">
 					<h3 class="widget-title">Dołącz do nas</h3>
 					<div class="widget-body">
-						<p class="follow-me-icons">
+						<p class="follow-me-icons clearfix">
 							<a href=""><i class="fa fa-twitter fa-2"></i></a> <a href=""><i
 								class="fa fa-dribbble fa-2"></i></a> <a href=""><i
 								class="fa fa-github fa-2"></i></a> <a href=""><i
@@ -237,17 +210,21 @@
 				<div class="col-md-6 widget">
 					<div class="widget-body">
 						<p class="simplenav">
-							<a href="#">Home</a> | <a href="about">O nas</a> | <a
-								href="sidebar-right">Sidebar</a> | <a href="contact">Kontakt</a>
-							| <b><a href="signup">Sign up</a></b>
+							<a href="/adviseJ/main/home">Strona Główna</a> | <a
+								href="/adviseJ/main/about">O nas</a> | <a
+								href="/adviseJ/main/sidebar-right">Sidebar</a> | <a
+								href="/adviseJ/main/contact">Kontakt</a> | <b><a
+								href="/adviseJ/main/signup">Rejestracja</a></b>
 						</p>
 					</div>
 				</div>
 
 				<div class="col-md-6 widget">
 					<div class="widget-body">
-						<p class="text-right">Copyright &copy; 2014, Jonasz Kitowski.
-							Designed by iRadca</p>
+						<p class="text-right">
+							Copyright &copy; 2014, Jonasz Kitowski. Designed by <a
+								href="http://gettemplate.com/" rel="designer">gettemplate</a>
+						</p>
 					</div>
 				</div>
 

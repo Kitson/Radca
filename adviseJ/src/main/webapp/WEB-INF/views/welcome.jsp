@@ -118,26 +118,14 @@
 	<section id="contact" class="container content-section text-center">
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
-			<h2>Kontakt</h2>
-			<p>Jesli chcesz wiedzieć więcej o którymś z naszych produktów, proszę napisz na podany adres email lub skorzystaj z formularza.</p>
+			<h2>Wejście</h2>
+			<p>Jesli chcesz wiedzieć więcej, proszę napisz na podany adres email lub skorzystaj z formularza.</p>
 			<p>feedback@iradca.com</p>
 			<a href="main/home"><img id="judge" alt="Porada prawna"
 				src="resources/images/judge.png" width="126" height="126"></a>
 			<p>
 				<a href="mailto:paykitson@gmail.com">paykitson@gmail.com</a>
 			</p>
-			<ul class="list-inline banner-social-buttons">
-				<li><a href="https://twitter.com/SBootstrap"
-					class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i>
-						<span class="network-name">Twitter</span></a></li>
-				<li><a href="https://github.com/IronSummitMedia/startbootstrap"
-					class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i>
-						<span class="network-name">Github</span></a></li>
-				<li><a href="https://plus.google.com/+Startbootstrap/posts"
-					class="btn btn-default btn-lg"><i
-						class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-				</li>
-			</ul>
 		</div>
 	</div>
 	</section>

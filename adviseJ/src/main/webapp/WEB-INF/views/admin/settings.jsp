@@ -1,32 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="Jonasz Kitowski">
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Jonasz Kitowski">
+	
+	<title>Panel Administracyjny - Wiadomośći</title>
 
-<title>Panel Administracyjny</title>
+	<link rel="shortcut icon" href="../resources/images/gt_favicon.png">
+	
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../resources/css/font-awesome.min.css">
 
-<link rel="shortcut icon" href="../resources/images/gt_favicon.png">
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="../resources/css/bootstrap-theme.css" media="screen" >
+	<link rel="stylesheet" href="../resources/css/main.css">
 
-<link rel="stylesheet" media="screen"
-	href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="../resources/css/font-awesome.min.css">
-
-<!-- Custom styles for our template -->
-<link rel="stylesheet" href="../resources/css/bootstrap-theme.css"
-	media="screen">
-<link rel="stylesheet" href="../resources/css/main.css">
-
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
 	<script src="assets/js/html5shiv.js"></script>
 	<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
@@ -34,28 +31,24 @@
 
 <body>
 	<!-- Fixed navbar -->
-	<div class="navbar navbar-inverse navbar-fixed-top headroom">
+	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
 		<div class="container">
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-collapse">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="/adviseJ/main/home"><img
-					src="../resources/images/logo.png" alt="Progressus HTML5 template"></a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				<a class="navbar-brand" href="/adviseJ/main/home"><img src="../resources/images/logo.png" alt="Progressus HTML5 template"></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
 					<li><a href="/adviseJ/main/home">Strona Główna</a></li>
 					<li><a href="/adviseJ/main/about">O nas</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">Wiecej Stron <b class="caret"></b></a>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Wiecej Stron <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="/adviseJ/main/advice">Porada</a></li>
 							<li><a href="/adviseJ/main/sidebar-right">Right Sidebar</a></li>
-						</ul></li>
+						</ul>
+					</li>
 					<li><a href="/adviseJ/main/contact">Kontakt</a></li>
 					<sec:authorize access="!isAuthenticated()">
 						<li><a class="btn" href="signin">Rejestracja / Logowanie</a></li>
@@ -72,10 +65,9 @@
 							href="<c:url value="/j_spring_security_logout" />">Wyloguj</a></li>
 					</sec:authorize>
 				</ul>
-			</div>
-			<!--/.nav-collapse -->
+			</div><!--/.nav-collapse -->
 		</div>
-	</div>
+	</div> 
 	<!-- /.navbar -->
 
 	<header id="head" class="secondary"></header>
@@ -84,8 +76,8 @@
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li class="active"><a href="/adviseJ/admin/">Panel
-					Administracyjny</a></li>
+			<li><a href="/adviseJ/admin/">Panel Administracyjny</a></li>
+			<li class="active"><a href="/adviseJ/admin/messages/">Wiadomości</a></li>
 		</ol>
 
 		<div class="row">
@@ -93,37 +85,27 @@
 			<!-- Article main content -->
 			<article class="col-xs-12 maincontent"> <header
 				class="page-header">
-			<h1 class="page-title">Panel Administracyjny</h1>
+			<h1 class="page-title">Wiadomośći</h1>
 			</header>
-			<div class="row">
-				<div class="col-md-3">
-					<a href="messages"><img alt="Wiadomości"
-						src="../resources/images/message-icon.png"></a>
-						<p><h1>Wiadomości</h1></p>
-				</div>
-				<div class="col-md-3">
-					<a href="settings"><img alt="Ustawienia"
-						src="../resources/images/settings-icon.png"></a>
-						<p><h1>Ustawienia</h1></p>
-				</div>
-				<div class="col-md-3">
-					<a href="users"><img alt="Zarządzaj kontami użytkowników"
-						src="../resources/images/edit-user-icon.png"></a>
-						<p><h1>Zarządzaj kontami użytkowników</h1></p>
-				</div>
-				<div class="col-md-3">
-					<a href="article"><img alt="Dodaj Artykuł"
-						src="../resources/images/article-add-icon.png"></a>
-						<p><h1>Dodaj Artykuł</h1></p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-offset-5">
-					<a href="/adviseJ/j_spring_security_logout"><img alt="Wyjście"
-						src="../resources/images/logout-icon.png"></a>
-						<p><h1>Wyjście</h1></p>
-				</div>
-				</div>
+				<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Wiadomości</h3>
+  </div>	
+  <div class="panel-body">
+    <c:forEach var="item" items="${messageList}">
+    <div class="thumbnail">
+		<h3>Autor:</h3>
+		${item.author}
+		<h3>Załączniki:</h3>
+		${item.filePath}
+		<a href="messages/<c:out value='${item.filePath}'></c:out>/" type="button"  class="btn btn-default">Pobierz plik</a>
+		<h3>Wiadomość:</h3>
+		${item.message}
+		</div>
+	</c:forEach>
+  </div>
+</div>
+
 			</article>
 			<!-- /Article -->
 
@@ -140,12 +122,13 @@
 
 				<div class="col-md-3 widget">
 					<h3 class="widget-title">Kontakt</h3>
-					<div class="widget-body">
-						<p>
-							+48 605052247<br> <a href="mailto:#">paykitson@gmail.com</a><br>
-							<br> Jana Pawla II, Gliwice, 44-100
-						</p>
-					</div>
+						<div class="widget-body">
+							<p>+48 605052247<br>
+								<a href="mailto:#">paykitson@gmail.com</a><br>
+								<br>
+								Jana Pawla II, Gliwice, 44-100
+							</p>	
+						</div>
 				</div>
 
 				<div class="col-md-3 widget">
@@ -188,11 +171,9 @@
 				<div class="col-md-6 widget">
 					<div class="widget-body">
 						<p class="simplenav">
-							<a href="/adviseJ/main/home">Strona Główna</a> | <a
-								href="/adviseJ/main/about">O nas</a> | <a
-								href="/adviseJ/main/sidebar-right">Sidebar</a> | <a
-								href="/adviseJ/main/contact">Kontakt</a> | <b><a
-								href="/adviseJ/main/signup">Rejestracja</a></b>
+							<a href="/adviseJ/main/home">Strona Główna</a> | <a href="/adviseJ/main/about">O nas</a> | <a
+								href="/adviseJ/main/sidebar-right">Sidebar</a> | <a href="/adviseJ/main/contact">Kontakt</a>
+							| <b><a href="/adviseJ/main/signup">Rejestracja</a></b>
 						</p>
 					</div>
 				</div>

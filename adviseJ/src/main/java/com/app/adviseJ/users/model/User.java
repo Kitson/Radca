@@ -24,25 +24,32 @@ public class User {
 	@NotBlank(message = "Pole email nie może być puste.")@Email(message = "Podany adres email jest nieprawidłowy.") private String email;
 	@AssertTrue(message ="Musisz zaakceptować regulamin.") private boolean enabled;
 	private Set<UserRole> userRole = new HashSet<UserRole>(0);
+	@NotBlank(message = "Pole Imię nie może być puste.") @Length (min = 5, max = 20, message = "Długość imienia musi mieścić się miedzy 5 a 20 znaków.")private String name;
+
+	@NotBlank(message = "Pole Nazwisko nie może być puste.") @Length (min = 5, max = 20, message = "Długość nazwiska musi mieścić się miedzy 5 a 20 znaków.") private String surname;
 	private String passwordConfirm;
  
 	public User() {
 	}
  
-	public User(String username, String password, boolean enabled,String email,String passwordConfirm) {
+	public User(String username, String password, boolean enabled,String email,String passwordConfirm,String name,String surname) {
 		this.username = username;
 		this.password = password;
 		this.enabled = enabled;
 		this.email = email;
 		this.passwordConfirm = passwordConfirm;
+		this.name = name;
+		this.surname = surname;
 	}
  
 	public User(String username, String password, 
-		boolean enabled,String email, Set<UserRole> userRole) {
+		boolean enabled,String email,String name,String surname, Set<UserRole> userRole) {
 		this.username = username;
 		this.password = password;
 		this.enabled = enabled;
 		this.email = email;
+		this.name = name;
+		this.surname = surname;
 		this.userRole = userRole;
 	}
 
@@ -58,7 +65,7 @@ public class User {
 
 	@Id
 	@Column(name = "username", unique = true, 
-		nullable = false, length = 45)
+		nullable = false, length = 25)
 	public String getUsername() {
 		return this.username;
 	}
@@ -93,6 +100,21 @@ public class User {
 	public void setUserRole(Set<UserRole> userRole) {
 		this.userRole = userRole;
 	}
+	@Column(name = "name", nullable = false)
+	public String getName() {
+		return name;
+	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
+	@Column(name = "surname", nullable = false)
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
  
 }

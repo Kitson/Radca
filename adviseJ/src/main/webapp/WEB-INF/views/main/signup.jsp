@@ -103,8 +103,7 @@
 				<c:if test="${not empty errors}">
 					<div class="error-log">
 						<c:forEach items="${errors}" var="error">
-							<c:out value="${error}" />
-							</br>
+							<p><c:out value="${error}" /></p>
 						</c:forEach>
 					</div>
 				</c:if>
@@ -119,6 +118,10 @@
 						<hr>
 
 						<form action="signup" method="POST">
+						<div class="top-margin">
+								<label>Login</label> <input type="text" required="required"
+									name="login" class="form-control">
+							</div>
 							<div class="top-margin">
 								<label>Imie</label> <input type="text" required="required"
 									name="firstName" class="form-control">
@@ -239,8 +242,7 @@
 				<div class="col-md-6 widget">
 					<div class="widget-body">
 						<p class="text-right">
-							Copyright &copy; 2014, Jonasz Kitowski. Designed by <a
-								href="http://gettemplate.com/" rel="designer">gettemplate</a>
+							Copyright &copy; 2014, Jonasz Kitowski. Designed by iRadca
 						</p>
 					</div>
 				</div>

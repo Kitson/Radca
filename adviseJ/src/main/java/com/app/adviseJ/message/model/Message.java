@@ -15,7 +15,7 @@ import org.hibernate.validator.constraints.Length;
 public class Message {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY) private int message_id;
 	@Length (min = 5, max = 200, message = "Długość wiadomości musi mieścić się miedzy 5 a 20 znaków.")	private String message;
-	@Length (min = 5, max = 100, message = "Ściezka musi mieścić się miedzy 5 a 100 znaków.") private String filePath;
+	@Length (min = 5, max = 256, message = "Ściezka musi mieścić się miedzy 5 a 100 znaków.") private String filePath;
 	private String author;
 	public Message()
 	{
@@ -36,7 +36,7 @@ public class Message {
 		this.message = message;
 	}
 	@Column(name = "filePath", unique = true, 
-			nullable = false, length = 100)
+			nullable = false, length = 256)
 	public String getFilePath() {
 		return filePath;
 	}

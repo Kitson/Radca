@@ -88,7 +88,7 @@
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li><a href="index">Strona Główna</a></li>
+			<li><a href="home">Strona Główna</a></li>
 			<li class="active">Logowanie</li>
 		</ol>
 
@@ -223,8 +223,7 @@
 				<div class="col-md-6 widget">
 					<div class="widget-body">
 						<p class="text-right">
-							Copyright &copy; 2014, Jonasz Kitowski. Designed by <a
-								href="http://gettemplate.com/" rel="designer">gettemplate</a>
+							Copyright &copy; 2014, Jonasz Kitowski. Designed by iRadca
 						</p>
 					</div>
 				</div>

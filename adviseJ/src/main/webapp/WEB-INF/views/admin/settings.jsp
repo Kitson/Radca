@@ -46,7 +46,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Wiecej Stron <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="/adviseJ/main/advice">Porada</a></li>
-							<li><a href="/adviseJ/main/sidebar-right">Right Sidebar</a></li>
+							<li><a href="/adviseJ/main/sidebar-right">Artykuły</a></li>
 						</ul>
 					</li>
 					<li><a href="/adviseJ/main/contact">Kontakt</a></li>
@@ -172,7 +172,7 @@
 					<div class="widget-body">
 						<p class="simplenav">
 							<a href="/adviseJ/main/home">Strona Główna</a> | <a href="/adviseJ/main/about">O nas</a> | <a
-								href="/adviseJ/main/sidebar-right">Sidebar</a> | <a href="/adviseJ/main/contact">Kontakt</a>
+								href="/adviseJ/main/sidebar-right">Artykuły</a> | <a href="/adviseJ/main/contact">Kontakt</a>
 							| <b><a href="/adviseJ/main/signup">Rejestracja</a></b>
 						</p>
 					</div>

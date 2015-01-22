@@ -54,7 +54,7 @@
 						data-toggle="dropdown">Wiecej Stron <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="advice">Porada</a></li>
-							<li><a href="sidebar-right">Right Sidebar</a></li>
+							<li><a href="sidebar-right">Artykuły</a></li>
 						</ul></li>
 					<li class="active"><a href="contact">Kontakt</a></li>
 					<sec:authorize access="!isAuthenticated()">
@@ -109,7 +109,7 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<input class="form-control" required="required" type="text"
-							placeholder="Name" name="Name">
+							placeholder="Imię" name="Name">
 					</div>
 					<div class="col-sm-4">
 						<input class="form-control" required="required" type="email"
@@ -117,13 +117,13 @@
 					</div>
 					<div class="col-sm-4">
 						<input class="form-control" required="required" type="text"
-							placeholder="Phone" name="Phone">
+							placeholder="Telefon" name="Phone">
 					</div>
 				</div>
 				<br>
 				<div class="row">
 					<div class="col-sm-12">
-						<textarea placeholder="Type your message here..."
+						<textarea placeholder="Napisz wiadomość..."
 							required="required" name="Text" class="form-control" rows="9"></textarea>
 					</div>
 				</div>
@@ -147,9 +147,9 @@
 			<aside class="col-sm-3 sidebar sidebar-right">
 
 			<div class="widget">
-				<h4>Address</h4>
+				<h4>Adres</h4>
 				<address>Jana Pawla II, Gliwice, 44-100</address>
-				<h4>Phone:</h4>
+				<h4>Telefon:</h4>
 				<address>605 052 247</address>
 			</div>
 
@@ -221,7 +221,7 @@
 					<div class="widget-body">
 						<p class="simplenav">
 							<a href="#">Strona Główna</a> | <a href="about">O nas</a> | <a
-								href="sidebar-right">Sidebar</a> | <a href="contact">Kontakt</a>
+								href="sidebar-right">Artykuły</a> | <a href="contact">Kontakt</a>
 							| <b><a href="signup">Rejestracja</a></b>
 						</p>
 					</div>

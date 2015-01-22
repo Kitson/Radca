@@ -10,9 +10,10 @@ public interface UserDao {
  
 	User findByUserName(String username);
 	void insertUser(User user);
-	void insertRole(UserRole userRole);
 	void updateUser(User user);
+	void insertRole(UserRole userRole);
+	void updateRole(UserRole userRole);
 	boolean userAvailable(String username);
-	Set<UserRole> getRole(User user);
+	UserRole getRole(User user);
 	List<User> getUsers();
 }

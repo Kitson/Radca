@@ -55,7 +55,7 @@
 						data-toggle="dropdown">More Pages <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="advice">Porada</a></li>
-							<li><a href="sidebar-right">Right Sidebar</a></li>
+							<li><a href="sidebar-right">Artykuły</a></li>
 						</ul></li>
 					<li><a href="contact">Kontakt</a></li>
 					<sec:authorize access="!isAuthenticated()">
@@ -233,7 +233,7 @@
 					<div class="widget-body">
 						<p class="simplenav">
 							<a href="#">Strona Główna</a> | <a href="about">O nas</a> | <a
-								href="sidebar-right">Sidebar</a> | <a href="contact">Kontakt</a>
+								href="sidebar-right">Artykuły</a> | <a href="contact">Kontakt</a>
 							| <b><a href="signup">Rejestracja</a></b>
 						</p>
 					</div>

@@ -3,6 +3,7 @@ package com.app.adviseJ.users.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -24,9 +25,9 @@ public class User {
 	@NotBlank(message = "Pole email nie może być puste.")@Email(message = "Podany adres email jest nieprawidłowy.") private String email;
 	@AssertTrue(message ="Musisz zaakceptować regulamin.") private boolean enabled;
 	private Set<UserRole> userRole = new HashSet<UserRole>(0);
-	@NotBlank(message = "Pole Imię nie może być puste.") @Length (min = 5, max = 20, message = "Długość imienia musi mieścić się miedzy 5 a 20 znaków.")private String name;
+	@NotBlank(message = "Pole Imię nie może być puste.") @Length (min = 3, max = 20, message = "Długość imienia musi mieścić się miedzy 5 a 20 znaków.")private String name;
 
-	@NotBlank(message = "Pole Nazwisko nie może być puste.") @Length (min = 5, max = 20, message = "Długość nazwiska musi mieścić się miedzy 5 a 20 znaków.") private String surname;
+	@NotBlank(message = "Pole Nazwisko nie może być puste.") @Length (min = 3, max = 20, message = "Długość nazwiska musi mieścić się miedzy 5 a 20 znaków.") private String surname;
 	private String passwordConfirm;
  
 	public User() {
@@ -92,7 +93,7 @@ public class User {
 		this.enabled = enabled;
 	}
  
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user")
 	public Set<UserRole> getUserRole() {
 		return this.userRole;
 	}

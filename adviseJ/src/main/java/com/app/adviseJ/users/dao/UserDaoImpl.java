@@ -37,7 +37,6 @@ public class UserDaoImpl implements UserDao {
 		session.beginTransaction();
 		users = session.createCriteria(User.class).add(Restrictions.eq("username", username)).list();
 		session.getTransaction().commit();
-		session.close();
 		if (users.size() > 0) {
 			return users.get(0);
 		} else {
@@ -83,15 +82,21 @@ public class UserDaoImpl implements UserDao {
 		session.getTransaction().commit();
 		session.close();
 	}
-	@SuppressWarnings("unchecked")
-	public Set<UserRole> getRole(User user) {
-		Set<UserRole> userRoles;
+	public void updateRole(UserRole userRole) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
-		userRoles = new HashSet<UserRole>(session.createCriteria(UserRole.class).createAlias("user", "user").add(Restrictions.eq("user", user)).list());
+		session.update(userRole);
 		session.getTransaction().commit();
 		session.close();
-		return userRoles;
+	}
+	@SuppressWarnings("unchecked")
+	public UserRole getRole(User user) {
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		Set<UserRole> userRoles = new HashSet<UserRole>(session.createCriteria(UserRole.class).createAlias("user", "user").add(Restrictions.eq("user", user)).list());
+		session.getTransaction().commit();
+		session.close();
+		return userRoles.iterator().next();
 	}
 
 }

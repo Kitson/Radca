@@ -54,7 +54,7 @@
 						data-toggle="dropdown">Wiecej Stron <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="/adviseJ/main/advice">Porada</a></li>
-							<li><a href="/adviseJ/main/sidebar-right">Right Sidebar</a></li>
+							<li><a href="/adviseJ/main/sidebar-right">Artykuły</a></li>
 						</ul></li>
 					<li><a href="/adviseJ/main/contact">Kontakt</a></li>
 					<sec:authorize access="!isAuthenticated()">
@@ -96,6 +96,13 @@
 				class="page-header">
 			<h1 class="page-title">Artykuł</h1>
 			</header>
+			<c:if test="${not empty errors}">
+					<div class="error-log">
+						<c:forEach items="${errors}" var="error">
+							<p><c:out value="${error}" /></p>
+						</c:forEach>
+					</div>
+				</c:if>
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">Dodaj Artykuł</h3>
@@ -103,33 +110,41 @@
 				<div class="panel-body">
 					<form action="article" method="POST">
 						<div class="top-margin">
-							<div class="top-margin">
-								<p>
-									<label>Tytuł</label> <input type="text" required="required"
-										name="title" class="form-control">
-								</p>
+							<div class="row">
+								<div class="top-margin col-lg-4">
+									<p>
+										<label>Tytuł</label> <input type="text" required="required"
+											name="title" class="form-control">
+									</p>
+								</div>
 							</div>
-							<div class="top-margin">
-								<p>
-									<label>Treść</label>
-									<textarea rows="20" cols="50" type="textarea"
-										required="required" name="article_text" class="form-control"
-										></textarea>
-								</p>
+							<div class="row">
+								<div class="top-margin">
+									<p>
+										<label>Treść</label>
+										<textarea rows="20" cols="50" type="textarea"
+											required="required" name="article_text" class="form-control"></textarea>
+									</p>
+								</div>
 							</div>
-							<div class="top-margin">
-								<p>
-								<label>Kategoria</label>
-									<select class="form-control" name="category">
-										<option value="Prawo konstytucyjne">Prawo konstytucyjne</option>
-										<option value="Prawo cywilne">Prawo cywilne</option>
-										<option value="Prawo pracy">Prawo pracy</option>
-										<option value="Prawo karne">Prawo karne</option>
-										<option value="Prawo administracyjne">Prawo administracyjne</option>
-										<option value="Prawo rodzinne i opiekuńcze">Prawo rodzinne i opiekuńcze</option>
-										<option value="Prawo finansowe">Prawo finansowe</option>
-									</select>
-								</p>
+							<div class="row">
+								<div class="top-margin col-lg-4">
+									<p>
+										<label>Kategoria</label> <select class="form-control"
+											name="category">
+											<option value="Prawo konstytucyjne">Prawo
+												konstytucyjne</option>
+											<option value="Prawo cywilne">Prawo cywilne</option>
+											<option value="Prawo pracy">Prawo pracy</option>
+											<option value="Prawo karne">Prawo karne</option>
+											<option value="Prawo administracyjne">Prawo
+												administracyjne</option>
+											<option value="Prawo rodzinne i opiekuńcze">Prawo
+												rodzinne i opiekuńcze</option>
+											<option value="Prawo finansowe">Prawo finansowe</option>
+										</select>
+									</p>
+								</div>
 							</div>
 						</div>
 
@@ -138,7 +153,8 @@
 						<div class="row">
 							<div class="col-lg-4">
 								<p>
-									<button class="btn btn-action" type="submit">Dodaj Artykuł</button>
+									<button class="btn btn-action" type="submit">Dodaj
+										Artykuł</button>
 								</p>
 							</div>
 						</div>
@@ -212,7 +228,7 @@
 						<p class="simplenav">
 							<a href="/adviseJ/main/home">Strona Główna</a> | <a
 								href="/adviseJ/main/about">O nas</a> | <a
-								href="/adviseJ/main/sidebar-right">Sidebar</a> | <a
+								href="/adviseJ/main/sidebar-right">Artykuły</a> | <a
 								href="/adviseJ/main/contact">Kontakt</a> | <b><a
 								href="/adviseJ/main/signup">Rejestracja</a></b>
 						</p>

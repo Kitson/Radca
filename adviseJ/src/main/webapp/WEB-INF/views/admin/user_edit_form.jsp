@@ -55,7 +55,7 @@
 						data-toggle="dropdown">Wiecej Stron <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="/adviseJ/main/advice">Porada</a></li>
-							<li><a href="/adviseJ/main/sidebar-right">Right Sidebar</a></li>
+							<li><a href="/adviseJ/main/sidebar-right">Artykuły</a></li>
 						</ul></li>
 					<li><a href="/adviseJ/main/contact">Kontakt</a></li>
 					<sec:authorize access="!isAuthenticated()">
@@ -86,7 +86,7 @@
 
 		<ol class="breadcrumb">
 			<li><a href="/adviseJ/admin/">Panel Administracyjny</a></li>
-			<li class="active"><a href="/adviseJ/admin/messages/">Użytkownicy</a></li>
+			<li class="active"><a href="/adviseJ/admin/users">Użytkownicy</a></li>
 		</ol>
 
 		<div class="row">
@@ -97,13 +97,20 @@
 			<h1 class="page-title">Użytkownicy</h1>
 			</header>
 			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+				<c:if test="${not empty errors}">
+					<div class="error-log">
+						<c:forEach items="${errors}" var="error">
+							<p><c:out value="${error}" /></p>
+						</c:forEach>
+					</div>
+				</c:if>
 				<c:if test="${not empty success}">
 					<div class="msg-log">${success}</div>
 				</c:if>
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<h3 class="thin text-center">Edytuj konto użytkownika
-							${user.username}</h3>
+							<b>${user.username}</b></h3>
 						<hr>
 
 						<form action="${user.username}" method="POST">
@@ -121,21 +128,37 @@
 										required="required" name="email" class="form-control"
 										value="${user.email}">
 								</div>
-									<div class="col-sm-6">
-										<p><input type="radio" name="role" value="Administrator" /><label>Administrator</label></p>
-										<p><input type="radio" name="role" value="Użytkownik" /><label>Użytkownik</label></p>
-										<p><input type="radio" name="role" value="Zablokowany Uzytkownik" /><label>Zablokowany Użytkownik</label></p>
-									</div>
-								</div>
-
-								<hr>
-
 								<div class="row">
-									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" type="submit">Zapisz
-											Zmiany</button>
+									<div class="top-margin">
+										<div class="col-sm-6">
+											<label>Uprawnienia</label>
+											<p>
+												<input type="radio" name="role" value="Administrator"<c:if test="${roles == 'ROLE_ADMIN'}">checked</c:if> /><label>Administrator</label>
+											</p>
+											<p>
+												<input type="radio" name="role" value="Radca Prawny"  <c:if test="${roles == 'ROLE_SOLICITOR'}">checked</c:if>/><label>Użytkownik</label>
+											</p>
+											<p>
+												<input type="radio" name="role" value="Uzytkownik"  <c:if test="${roles == 'ROLE_USER'}">checked</c:if>/><label>Użytkownik</label>
+											</p>
+											<p>
+												<input type="radio" name="role"
+													value="Zablokowany Uzytkownik" <c:if test="${roles == '' }">checked</c:if>/><label>Zablokowany
+													Użytkownik</label>
+											</p>
+										</div>
 									</div>
 								</div>
+							</div>
+
+							<hr>
+
+							<div class="row">
+								<div class="col-lg-4 text-right">
+									<button class="btn btn-action" type="submit">Zapisz
+										Zmiany</button>
+								</div>
+							</div>
 						</form>
 					</div>
 				</div>
@@ -208,7 +231,7 @@
 						<p class="simplenav">
 							<a href="/adviseJ/main/home">Strona Główna</a> | <a
 								href="/adviseJ/main/about">O nas</a> | <a
-								href="/adviseJ/main/sidebar-right">Sidebar</a> | <a
+								href="/adviseJ/main/sidebar-right">Artykuły</a> | <a
 								href="/adviseJ/main/contact">Kontakt</a> | <b><a
 								href="/adviseJ/main/signup">Rejestracja</a></b>
 						</p>

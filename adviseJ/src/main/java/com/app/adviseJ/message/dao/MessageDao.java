@@ -1,6 +1,5 @@
 package com.app.adviseJ.message.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.app.adviseJ.message.model.Message;

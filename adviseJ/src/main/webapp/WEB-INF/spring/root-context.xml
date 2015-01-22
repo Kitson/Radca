@@ -16,6 +16,7 @@
 
 	<context:annotation-config />
 	<context:component-scan base-package="com.app.*" />
+	<context:component-scan base-package="com.app.adviseJ.article.model.Article" />
 	<security:global-method-security
 		pre-post-annotations="enabled">
 	</security:global-method-security>
@@ -72,4 +73,5 @@
 			</props>
 		</property>
 	</bean>
+	<bean id="articleDao" class="com.app.adviseJ.article.dao.ArticleDaoImpl"></bean>
 </beans>

@@ -54,7 +54,7 @@
 						data-toggle="dropdown">Wiecej Stron <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="/adviseJ/main/advice">Porada</a></li>
-							<li><a href="/adviseJ/main/sidebar-right">Right Sidebar</a></li>
+							<li><a href="/adviseJ/main/sidebar-right">Artykuły</a></li>
 						</ul></li>
 					<li><a href="/adviseJ/main/contact">Kontakt</a></li>
 					<sec:authorize access="!isAuthenticated()">
@@ -96,34 +96,37 @@
 			<h1 class="page-title">Panel Administracyjny</h1>
 			</header>
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-6 top-margin">
 					<a href="messages"><img alt="Wiadomości"
 						src="../resources/images/message-icon.png"></a>
-						<p><h1>Wiadomości</h1></p>
+					<p>
+					<h1>Wiadomości</h1>
+					</p>
 				</div>
-				<div class="col-md-3">
-					<a href="settings"><img alt="Ustawienia"
-						src="../resources/images/settings-icon.png"></a>
-						<p><h1>Ustawienia</h1></p>
-				</div>
-				<div class="col-md-3">
-					<a href="users"><img alt="Zarządzaj kontami użytkowników"
-						src="../resources/images/edit-user-icon.png"></a>
-						<p><h1>Zarządzaj kontami użytkowników</h1></p>
-				</div>
-				<div class="col-md-3">
+				<div class="col-md-6 top-margin">
 					<a href="article"><img alt="Dodaj Artykuł"
 						src="../resources/images/article-add-icon.png"></a>
-						<p><h1>Dodaj Artykuł</h1></p>
+					<p>
+					<h1>Dodaj Artykuł</h1>
+					</p>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-offset-5">
+				<div class="col-md-6 top-margin">
+					<a href="users"><img alt="Zarządzaj kontami użytkowników"
+						src="../resources/images/edit-user-icon.png"></a>
+					<p>
+					<h1>Zarządzaj kontami użytkowników</h1>
+					</p>
+				</div>
+				<div class="col-md-6 top-margin">
 					<a href="/adviseJ/j_spring_security_logout"><img alt="Wyjście"
 						src="../resources/images/logout-icon.png"></a>
-						<p><h1>Wyjście</h1></p>
+					<p>
+					<h1>Wyjście</h1>
+					</p>
 				</div>
-				</div>
+			</div>
 			</article>
 			<!-- /Article -->
 
@@ -190,7 +193,7 @@
 						<p class="simplenav">
 							<a href="/adviseJ/main/home">Strona Główna</a> | <a
 								href="/adviseJ/main/about">O nas</a> | <a
-								href="/adviseJ/main/sidebar-right">Sidebar</a> | <a
+								href="/adviseJ/main/sidebar-right">Artykuły</a> | <a
 								href="/adviseJ/main/contact">Kontakt</a> | <b><a
 								href="/adviseJ/main/signup">Rejestracja</a></b>
 						</p>

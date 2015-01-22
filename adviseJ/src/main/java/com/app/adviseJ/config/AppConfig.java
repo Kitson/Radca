@@ -27,7 +27,7 @@ public class AppConfig {
                 builder.scanPackages("com.app.adviseJ.message.model")
                       .addProperties(getHibernateProperties());
                 builder.scanPackages("com.app.adviseJ.users.model").addProperties(getHibernateProperties());
- 
+                builder.scanPackages("com.app.adviseJ.article.model").addProperties(getHibernateProperties());
                 return builder.buildSessionFactory();
         }
  

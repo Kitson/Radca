@@ -12,7 +12,7 @@ public class ArticleDaoImpl implements ArticleDao {
 	
 	@Autowired
 	public SessionFactory sessionFactory;
-	@Override
+
 	public void insertArticle(Article article) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
@@ -22,7 +22,6 @@ public class ArticleDaoImpl implements ArticleDao {
 
 	}
 
-	@Override
 	public void updateArticle(Article article) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
@@ -32,7 +31,6 @@ public class ArticleDaoImpl implements ArticleDao {
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public List<Article> getArticles() {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
